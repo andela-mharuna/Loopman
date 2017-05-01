@@ -1,35 +1,24 @@
 import React from 'react';
+import Header from './Header';
+import Index from './Index';
 
 class App extends React.Component{
-    constructor(){
-         super();
-         this.state = {
-             messages: [
-                 "hullloo boobae ! how are you?",
-                 "i am fine, and you?"
-             ]
-         };
-    }
-
-
     render(){
-
-        var messageNodes = this.state.messages.map((message) => {
-            return (
-                <div>
-                    {message}
+        return (
+            <div className="main-container">
+                <nav className="navbar navbar-default" role="navigation">
+                    <Header />
+                </nav>
+                <div className="col-sm-8 col-sm-offset-2">
+                    <Index />
                 </div>
-            );
-        });
-
-
-        return(
-            <div>
-                <div>
-                    {messageNodes}
+                
+                <div className="container">
+                    {this.props.children}
                 </div>
             </div>
-        );
+            
+        )
     }
 }
 
