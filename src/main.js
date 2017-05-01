@@ -7,13 +7,13 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 const Root = () => {
   return (
-    <div className="container">
+    <div>
       <Router history={browserHistory}>
-        <Route path="/" component={App} />
-        <Route path="login" component={Login} />
+         <Route path="/" component={App} />
+          <Route path="/login" component={Login} />
       </Router>
     </div>
   )
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<Root />, document.getElementById('app'));

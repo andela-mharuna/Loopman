@@ -11,12 +11,12 @@ class Header extends React.Component{
             </div>
             <ul className="nav navbar-nav">
                 <li>
-                    <Link to="/bookmarks">Bookmarks</Link>
+                    <Link to="bookmarks">Favourites</Link>
                 </li>
             </ul>
-            <ul className="nav navbar-nav navbar-right">
-                <li><button className="btn btn-info log">Log In</button></li>
-                <li><button className="btn btn-danger log">Log out </button></li>
+            <ul className="nav navbar-nav navbar-right" style={{marginRight: 15}}>
+                <li><button className="btn btn-info log" style={{paddingRight: 15}}><Link to="/login">Log In</Link></button></li>
+                <li><button className="btn btn-danger log" style={{paddingLeft: 15}}>Log out </button></li>
             </ul>
             
         </div>
