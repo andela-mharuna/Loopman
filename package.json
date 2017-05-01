@@ -1,0 +1,24 @@
+{
+  "name": "loopman",
+  "version": "1.0.0",
+  "description": "A React-Flux news feed application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Memuna01/Loopman.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Memuna01/Loopman/issues"
+  },
+  "homepage": "https://github.com/Memuna01/Loopman#readme",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.1.3",
+    "eslint-plugin-import": "^2.2.0"
+  }
+}
