@@ -14,9 +14,6 @@ class Header extends React.Component{
                 <li>
                     <Link to="bookmarks">Favourites</Link>
                 </li>
-                <li>
-                    <Link to="search">Search</Link>
-                </li>
             </ul>
             <ul className="nav navbar-nav navbar-right" style={{marginRight: 15}}>
                 <li><button className="btn btn-info log" style={{paddingRight: 15}}><Link to="/login">Log In</Link></button></li>

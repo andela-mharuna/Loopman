@@ -14,8 +14,7 @@ const Root = () => {
     <div>
       <Router history={hashHistory}> 
          <Route path="/" component={App}>
-            <IndexRoute component={Index} />
-            <Route path="/search" component={SearchLoopman} />
+            <IndexRoute component={SearchLoopman} />
             <Route path="/headlines" component={Headlines} />
          </Route>
       </Router>

@@ -20,7 +20,6 @@ class SearchLoopman extends React.Component{
         return axios.get(url)
         .then(response => { 
         const sources = response.data.sources;
-        console.log("sources", sources);
         this.setState({ sources });
       })
       .catch((error) => {
@@ -38,14 +37,20 @@ class SearchLoopman extends React.Component{
                 return s.name.toLowerCase().match( searchValue );
             });
         }
-        console.log("sourceId", this.props.location);
+        
         return(
-            <div>
-                <input type="text" name="" value={this.state.searchValue} onChange={this.handleChange.bind(this)} />
+            <div className="col-sm-8 col-sm-offset-2">
+                <input className="form-control" type="text" name="" 
+                value={this.state.searchValue} onChange={this.handleChange.bind(this)} placeholder="Find source..." />
 
-                <ul>
+                <h3>All Sources: </h3>
+                <ul className="list-group">
                     {sources.map((s, index) => {
-                      return <li key={index}>{s.id} <a href={`#/headlines?source=${s.id}`}>View Headlines</a></li>;
+                      return <li id={index} className="list-group-item" key={index}>{s.name} &emsp;
+                      {s.sortBysAvailable.map((option, index) => {
+                          return <a key={index} href={`#/headlines?source=${s.id}&sortBy=${option}`}> ({option}) </a>
+                      })}
+                      </li>;
                     })}
                 </ul>
             </div>
