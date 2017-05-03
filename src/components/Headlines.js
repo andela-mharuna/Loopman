@@ -34,7 +34,7 @@ class Headlines extends React.Component{
                  <div className="col-sm-11" key={index}>
                     <div className="panel panel-primary">
                         <div className="panel-heading">
-                            <h3 className="panel-title"> <span className="btn">{article.title} by {article.author}</span></h3>
+                            <h3 className="panel-title"> <span className="btn">{article.title}</span></h3>
                         </div>
                         <div className="panel-body">
                             { article.description } 
