@@ -9,12 +9,12 @@ class App extends React.Component{
                 <nav className="navbar navbar-default" role="navigation">
                     <Header />
                 </nav>
-                <div className="col-sm-8 col-sm-offset-2">
-                    <Index />
+                <div className="col-sm-10 col-sm-offset-1">
+                    {this.props.children}
                 </div>
                 
                 <div className="container">
-                    {this.props.children}
+                    
                 </div>
             </div>
             

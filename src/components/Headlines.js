@@ -1,27 +1,32 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 
-class Index extends React.Component {
-    
+class Headlines extends React.Component{
     constructor(){
-        super()
-        this.state = { news: [] };
+        super();
+
+        this.state = {
+            headlines : []
+        }
     }
+
     componentDidMount(){
-        const url = 'https://newsapi.org/v1/articles?source=techcrunch&sortBy=latest&apiKey=213327409d384371851777e7c7f78dfe';
+        const sourceId = this.props.location.search.slice(8);
+        const url = `https://newsapi.org/v1/articles?source=${sourceId}&sortBy=latest&apiKey=213327409d384371851777e7c7f78dfe`;
         return axios.get(url)
         .then(response => { 
-        const news = response.data;
-        this.setState({ news });
+        const headlines = response.data;
+        this.setState({ headlines });
       })
       .catch((error) => {
         console.log(error);
     });
+
     }
 
     render(){
-        const data = this.state.news.articles
+        const data = this.state.headlines.articles;
+
         function renderArticles () {
             return data.map((article, index) => {
              return (
@@ -41,13 +46,13 @@ class Index extends React.Component {
         }
         return (
             <div className="col-sm-11 col-sm-offset-1">
-                <h2>Latest news from {this.state.news.source}</h2>
+                <h2>Latest News From {this.state.headlines.source}</h2>
                 <p></p>
                {data && <div>{renderArticles()}</div>}
             </div>  
         );
-    }   
 
+    }
 }
 
-export default Index;
+export default Headlines;

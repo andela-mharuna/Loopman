@@ -9,7 +9,7 @@ class Login extends React.Component{
  
   responseGoogle (googleUser) {
     var id_token = googleUser.getAuthResponse().id_token;
-    console.log("access-token",{accessToken: id_token});
+    console.log("access-tokenmr",{accessToken: id_token});
     //anything else you want to do(save to localStorage)... 
   }
  

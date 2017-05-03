@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-
+import Search from './Search';
 
 class Header extends React.Component{
     render(){
@@ -8,10 +8,14 @@ class Header extends React.Component{
         <div className="col-sm-12" style={{margin: 15}}>
             <div className="navbar-header">
                  <Link className="navbar-brand" to="/">Loopman</Link>
+
             </div>
             <ul className="nav navbar-nav">
                 <li>
                     <Link to="bookmarks">Favourites</Link>
+                </li>
+                <li>
+                    <Link to="search">Search</Link>
                 </li>
             </ul>
             <ul className="nav navbar-nav navbar-right" style={{marginRight: 15}}>
