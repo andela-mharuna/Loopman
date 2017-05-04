@@ -1,31 +1,41 @@
 import React from 'react';
-import axios from 'axios';
+import * as newsActions from '../actions/newsActions';
+import newsstores from '../stores/newsstores';
+
 
 class Headlines extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      headlines: [],
+      articles: [],
     };
+
+    this.fetchNewsArticles = this.fetchNewsArticles.bind(this);
+  }
+
+  fetchNewsArticles() {
+    this.setState({ articles: newsstores.fetchNewsArticles() });
+  }
+
+  componentWillMount(){
+    const articleId = this.props.location.query.source;
+    const articleFilter = this.props.location.query.sortBy;
+
+    newsActions.getNewsArticles(articleId, articleFilter);
+    newsstores.on('articles_change', this.fetchNewsArticles);
+      
   }
 
   componentDidMount() {
-    const sourceId = this.props.location.query.source;
-    const sourceFilter = this.props.location.query.sortBy;
-    const url = `https://newsapi.org/v1/articles?source=${sourceId}&sortBy=${sourceFilter}&apiKey=213327409d384371851777e7c7f78dfe`;
-    return axios.get(url)
-        .then((response) => {
-          const headlines = response.data;
-          this.setState({ headlines });
-        })
-      .catch((error) => {
-        console.log(error);
-      });
+  }
+
+  componentWillUnmount(){
+      newsstores.removeListener('articles_change', this.fetchNewsArticles);
   }
 
   render() {
-    const data = this.state.headlines.articles;
+    const data = this.state.articles.articles;
 
     function renderArticles() {
       return data.map((article, index) => (
@@ -44,7 +54,7 @@ class Headlines extends React.Component {
     }
     return (
       <div className="col-sm-11 col-sm-offset-1">
-        <h2>News From {this.state.headlines.source}</h2>
+        <h2>News From {this.state.articles.source}</h2>
         <p />
         {data && <div>{renderArticles()}</div>}
       </div>
