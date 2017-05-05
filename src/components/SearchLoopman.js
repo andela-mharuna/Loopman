@@ -1,8 +1,8 @@
 import React from 'react';
-import axios from 'axios';
-import newsAPI from '../utils/newsAPI';
+import * as newsActions from '../actions/newsActions';
+import newsstores from '../stores/newsstores';
 
-class SearchLoopman extends React.Component {
+class TestSearchLoopman extends React.Component {
   constructor() {
     super();
 
@@ -10,22 +10,33 @@ class SearchLoopman extends React.Component {
       sources: [],
       searchValue: '',
     };
+
+    this.fetchNewsSources = this.fetchNewsSources.bind(this);
+    this.getNewsSourcesFromActions = this.getNewsSourcesFromActions.bind(this);
+  }
+
+  fetchNewsSources() {
+    this.setState({ sources: newsstores.fetchNewsSources() });
   }
 
   handleChange(e) {
     this.setState({ searchValue: e.target.value });
   }
 
+  getNewsSourcesFromActions(){
+    newsActions.getNewsSources();
+  }
+
+  componentWillMount() {
+    this.getNewsSourcesFromActions();
+    newsstores.on('sources_change', this.fetchNewsSources);
+  }
+
   componentDidMount() {
-    const url = 'https://newsapi.org/v1/sources';
-    return axios.get(url)
-        .then((response) => {
-          const sources = response.data.sources;
-          this.setState({ sources });
-        })
-      .catch((error) => {
-        console.log(error);
-      });
+  }
+
+  componentWillUnmount(){
+    newsstores.removeListener('sources_change', this.fetchNewsSources);
   }
 
   render() {
@@ -54,4 +65,4 @@ class SearchLoopman extends React.Component {
   }
 }
 
-export default SearchLoopman;
+export default TestSearchLoopman;

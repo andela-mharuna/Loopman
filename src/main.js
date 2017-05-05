@@ -6,18 +6,16 @@ import Login from './components/Login';
 import Search from './components/Search';
 import Headlines from './components/Headlines';
 import SearchLoopman from './components/SearchLoopman';
-import TestSearchLoopman from './components/TestSearchLoopman';
-import TestHeadlines from './components/TestHeadlines';
-import { Router, Route, IndexRoute, browserHistory, hashHistory } from 'react-router';
+import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 // import Index from './components/Index';
 
 const Root = () => (
   <div>
     <Router history={hashHistory}>
-      <Route path="/" component={App}>
+      <Route path="/home" component={App}>
         <IndexRoute component={SearchLoopman} />
-        <Route path="/TestSearchLoopman" component={TestSearchLoopman} />
-        <Route path="/TestHeadlines" component={TestHeadlines} />
+        <Route path="/headlines" component={Headlines} />
+        <Route path="/" component={Login} />
       </Route>
     </Router>
   </div>
