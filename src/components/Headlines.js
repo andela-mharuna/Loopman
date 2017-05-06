@@ -48,17 +48,17 @@ class Headlines extends React.Component {
           <div className="col-sm-10 col-sm-offset-1" key={index} style={{ textAlign: 'center' }}>
             <div className="panel panel-default">
               <div className="panel-heading">
-                <h4> {article.publishedAt.slice(0, 10)} - {article.title} </h4>
+                <h4> { article.publishedAt.slice(0, 10) } - { article.title } </h4>
               </div>
               <div className="panel-body">
                 <div className="row">
                   <div className="col-sm-3">
-                    <img height="150" width="200" src={article.urlToImage} alt="article image" />
+                    <img height="150" width="200" src={ article.urlToImage } alt="article image" />
                   </div>
                   <div className="col-sm-7">
-                    {article.description}
+                    { article.description }
                     <br />
-                    <a href={article.url} target="_blank">...Go To Article...</a>
+                    <a href={ article.url } target="_blank">...Go To Article...</a>
                   </div>
                 </div>
               </div>
