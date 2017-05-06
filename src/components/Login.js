@@ -11,8 +11,6 @@ class Login extends React.Component{
 
 storeUserData(response){
   localStorage.setItem('id_token', response.googleId);
-  console.log(response);
-  console.log("response id",response.googleId);;
   hashHistory.push('/');
 }
 

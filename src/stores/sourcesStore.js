@@ -5,34 +5,19 @@ class NewsStores extends EventEmitter {
   constructor() {
     super();
     this.sources = [];
-    this.articles = [];
   }
 
   fetchNewsSources() {
     return this.sources;
   }
 
-  fetchNewsArticles() {
-    return this.articles;
-  }
-
   handleNewsAction(result) {
     switch (result.actionType) {
-      case 'GET_NEWS_SOURCES': {
+      case 'GET_NEWS_SOURCES':
         this.sources = result.data;
         this.emit('sources_change');
         break;
-      }
     }
-
-    switch (result.actionType) {
-      case 'GET_NEWS_ARTICLES': {
-        this.articles = result.data;
-        this.emit('articles_change');
-        break;
-      }
-    }
-    
   }
 
 }
