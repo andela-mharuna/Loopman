@@ -21,4 +21,4 @@ describe('<App />', () => {
     expect(wrapper.contains(<div className="main-container" />)).to.equal(true);
   });
 
- });
+ })
