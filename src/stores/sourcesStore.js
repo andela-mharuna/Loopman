@@ -13,11 +13,18 @@ class NewsStores extends EventEmitter {
     return this.sources;
   }
 
+    addChangeListener(callback){
+        this.on('change', callback);
+    }
+    removeChangeListener(callback){
+        this.removeListener('change', callback);
+    }
+
   handleNewsAction(result) {
     switch (result.actionType) {
       case newsConstants.GET_NEWS_SOURCES:
         this.sources = result.data;
-        this.emit('sources_change');
+        this.emit('change');
         break;
     }
   }

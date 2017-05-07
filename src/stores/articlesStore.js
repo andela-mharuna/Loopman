@@ -12,12 +12,18 @@ class NewsStores extends EventEmitter {
     fetchNewsArticles() {
         return this.articles;
     }
+    addChangeListener(callback) {
+        this.on('change', callback);
+    }
+    removeChangeListener(callback) {
+        this.removeListener('change', callback);
+    }
 
     handleNewsAction(result) {
         switch (result.actionType) {
             case newsConstants.GET_NEWS_ARTICLES:
                 this.articles = result.data;
-                this.emit('articles_change');
+                this.emit('change');
                 break;
         }
     }

@@ -17,7 +17,7 @@ class Header extends React.Component {
   render() {
     function LogOutButton(props) {
       return (
-        <button className="btn btn-default btn-danger" onClick={ props.onClick }>Log out
+        <button className="btn btn-default btn-danger" onClick={props.onClick}>Log out
         </button>
       );
     }
@@ -25,7 +25,7 @@ class Header extends React.Component {
     let button = null;
     const IsLoggedIn = localStorage.getItem('id_token');
     if (IsLoggedIn) {
-      button = < LogOutButton onClick={ this.handleLogoutClick } />
+      button = < LogOutButton onClick={this.handleLogoutClick} />
     }
 
     return (
@@ -41,7 +41,7 @@ class Header extends React.Component {
           </ul>
           <ul className="nav navbar-nav navbar-right navbar-btn">
             <li>
-              { button }
+              {button}
             </li>
           </ul>
         </div>

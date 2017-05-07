@@ -21,4 +21,9 @@ describe('<App />', () => {
     expect(wrapper.contains(<div className="main-container" />)).to.equal(true);
   });
 
- });
+  it('renders as a <div>', () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.type()).to.eql('div');
+  });
+
+});
