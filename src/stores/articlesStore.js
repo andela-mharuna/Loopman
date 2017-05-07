@@ -1,5 +1,6 @@
 import { EventEmitter } from 'events';
 import Dispatcher from '../dispatcher/dispatcher';
+import newsConstants from '../constants/newsConstants';
 
 class NewsStores extends EventEmitter {
     constructor() {
@@ -14,7 +15,7 @@ class NewsStores extends EventEmitter {
 
     handleNewsAction(result) {
         switch (result.actionType) {
-            case 'GET_NEWS_ARTICLES':
+            case newsConstants.GET_NEWS_ARTICLES:
                 this.articles = result.data;
                 this.emit('articles_change');
                 break;
