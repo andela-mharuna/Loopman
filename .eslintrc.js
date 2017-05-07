@@ -8,10 +8,13 @@ module.exports = {
 
     "env": {
         "mocha": true,
+        "node": true
     },
     "globals": {
-    "localStorage": true,
-    "sinon": true,
-    "$": true
-  }
+        "localStorage": true,
+        "sinon": true,
+        "$": true,
+        "window": true,
+        "expect": true
+    }
 };
