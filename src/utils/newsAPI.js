@@ -6,7 +6,6 @@ export function getNewsArticlesApi(source, option, callback) {
 }
 
 export function getNewsSourcesApi(callback) {
-  // window.mo = function getNewsSources(callback){
   const url = 'https://newsapi.org/v1/sources';
   axios.get(url).then(response => callback(response.data.sources));
 }
