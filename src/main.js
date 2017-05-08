@@ -8,7 +8,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 const requireAuth = (nextState, replace) => {
   const urlPath = window.location.hash;
-  const token = localStorage.getItem('id_token')
+  const token = localStorage.getItem('id_token');
   if (!token) {
     console.log(window.location);
     console.log("window hash", window.location.hash);
