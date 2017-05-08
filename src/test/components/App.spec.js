@@ -16,7 +16,7 @@ describe('<App />', () => {
     const wrapper = shallow(
       <App>
         <div className="main-container" />
-      </App>
+      </App>,
     );
     expect(wrapper.contains(<div className="main-container" />)).to.equal(true);
   });
@@ -25,5 +25,4 @@ describe('<App />', () => {
     const wrapper = shallow(<App />);
     expect(wrapper.type()).to.eql('div');
   });
-
 });

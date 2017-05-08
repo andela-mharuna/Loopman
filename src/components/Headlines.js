@@ -2,31 +2,29 @@ import React from 'react';
 import * as newsActions from '../actions/newsActions';
 import newsstores from '../stores/articlesStore';
 
-const renderArticles = (data) => {
-  return data.map((article, index) => {
-    return (
-      <div className="col-sm-10 col-sm-offset-1" key={index} style={{ textAlign: 'center' }}>
-        <div className="panel panel-default">
-          <div className="panel-heading">
-            <h4> {article.publishedAt && article.publishedAt.slice(0, 10)} - {article.title} </h4>
+const renderArticles = (data) => data.map((article, index) => (
+  <div className="col-sm-8 col-sm-offset-2" key={index}>
+    <div className="panel panel-default">
+      <div className="panel-heading">
+        <h4> {article.publishedAt && article.publishedAt.slice(0, 10)} - {article.title} </h4>
+      </div>
+
+      <div className="panel-body">
+        <div className="row">
+          <div className="col-sm-4">
+            <img width='200' height='150' src={article.urlToImage} alt='image'/>
           </div>
-          <div className="panel-body">
-            <div className="row">
-              <div className="col-sm-3">
-                <img height="150" width="200" src={article.urlToImage} alt="article image" />
-              </div>
-              <div className="col-sm-7">
-                {article.description}
-                <br />
-                <a href={article.url} target="_blank">...Go To Article...</a>
-              </div>
-            </div>
+          <div className="col-sm-8">
+            {article.description}
+            <br/>
+            <a href={article.url} target="_blank">...Go To Article...</a>
           </div>
+
         </div>
       </div>
-    );
-  });
-}
+    </div>
+  </div>
+));
 
 class Headlines extends React.Component {
   constructor() {
@@ -34,7 +32,7 @@ class Headlines extends React.Component {
 
     this.state = {
       articles: [],
-    }
+    };
 
     this.fetchNewsArticles = this.fetchNewsArticles.bind(this);
   }
@@ -56,12 +54,17 @@ class Headlines extends React.Component {
   }
 
   render() {
+   // let urlToImage = null;
     const data = this.state.articles.articles;
     const newSourceName = this.state.articles.source;
+   // urlToImage = data.urlToImage;
+    //if(!urlToImage){
+      //urlToImage = '../../newsImage.jpeg';
+    //}
     return (
       <div>
-        <h2 style={{ textAlign: 'center' }}>News From {newSourceName && newSourceName.split("-").join(" ").toUpperCase()}</h2>
-        <br/>
+        <h2 style={{textAlign:'center'}}>News From {newSourceName && newSourceName.split('-').join(' ').toUpperCase()}</h2>
+        <br />
         {data && <div>{renderArticles(data)}</div>}
       </div>
     );

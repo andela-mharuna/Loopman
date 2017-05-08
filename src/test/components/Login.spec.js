@@ -12,7 +12,7 @@ describe('<Login />', () => {
     expect(wrapper.find(GoogleLogin)).to.have.length(1);
   });
 
-   it('has a p tag with text: Please login to continue', () => {
+  it('has a p tag with text: Please login to continue', () => {
     const wrapper = shallow(<Login />);
     expect(wrapper.find('p')).to.have.length(1);
   });
@@ -21,5 +21,4 @@ describe('<Login />', () => {
     const wrapper = shallow(<Login />);
     expect(wrapper.type()).to.eql('div');
   });
-
 });

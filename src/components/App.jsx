@@ -4,11 +4,11 @@ import Header from './Header';
 class App extends React.Component {
     render() {
         return (
-            <div className="main-container">
-                <div role="navigation">
+            <div className="container-fluid">
+                <div>
                     <Header />
                 </div>
-                <div className="col-sm-10 col-sm-offset-1">
+                <div>
                     {this.props.children}
                 </div>
             </div>

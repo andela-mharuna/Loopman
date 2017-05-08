@@ -14,13 +14,13 @@ describe('<Headlines />', () => {
   beforeEach(() => {
     wrapper = shallow(<Headlines />);
   });
- 
+
   it('should have 1 h2 tag', () => {
-     expect(wrapper.find('h2')).to.have.length(1);   
+    expect(wrapper.find('h2')).to.have.length(1);
   });
 
   it('renders as a <div>', () => {
-     expect(wrapper.type()).to.eql('div');
+    expect(wrapper.type()).to.eql('div');
   });
 
   it('should have state in props', () => {
@@ -29,14 +29,5 @@ describe('<Headlines />', () => {
       .deep
       .equal(initialState);
   });
-
-//   it('should fire ComponentDidMount', () => {
-//     const componentDidMountSpy = sinon.spy(Headlines.prototype, 'componentDidMount');
-//     expect(componentDidMountSpy.calledOnce)
-//       .to
-//       .equal(true);
-//      componentDidMountSpy.reset();
-//   });
-
 
 });
