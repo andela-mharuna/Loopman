@@ -16,8 +16,8 @@ const renderArticles = (data) => data.map((article, index) => (
           </div>
           <div className="col-sm-8">
             {article.description}
-            <br/>
-            <a href={article.url} target="_blank">...Go To Article...</a>
+            <br/> <br/>
+            <a className="btn btn-primary" href={article.url} target="_blank">View Article</a>
           </div>
 
         </div>

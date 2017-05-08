@@ -51,10 +51,11 @@ class SearchLoopman extends React.Component {
         <h3>All Sources: </h3>
         <ul className="list-group">
           {sources.map((source, index) => <li id={index} className="list-group-item" key={index}>{source.name} &emsp;
-            {source.sortBysAvailable.map((option, index) => <a
-              key={index}
-              href={`#/headlines?source=${source.id}&sortBy=${option}`}
-            > [{option}] &nbsp; </a>)}
+            {source.sortBysAvailable.map((option, index) => 
+            <a style={{textAlign: 'right'}} className="btn btn-default" key={index}
+              href={`#/headlines?source=${source.id}&sortBy=${option}`}>
+               {option}&nbsp; 
+            </a>)}
           </li>)}
         </ul>
       </div>
