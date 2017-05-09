@@ -12,7 +12,7 @@ const renderArticles = (data) => data.map((article, index) => (
       <div className="panel-body">
         <div className="row">
           <div className="col-sm-4">
-            <img width='200' height='150' src={article.urlToImage} alt='image'/>
+            <img width='200' height='150' src={article.urlToImage} alt='image' />
           </div>
           <div className="col-sm-8">
             {article.description}
@@ -54,14 +54,9 @@ class Headlines extends React.Component {
   }
 
   render() {
-   // let urlToImage = null;
     const data = this.state.articles.articles;
     const newSourceName = this.state.articles.source;
-   // urlToImage = data.urlToImage;
-    //if(!urlToImage){
-      //urlToImage = '../../newsImage.jpeg';
-    //}
-    return (
+     return (
       <div>
         <h2 style={{textAlign:'center'}}>News From {newSourceName && newSourceName.split('-').join(' ').toUpperCase()}</h2>
         <br />
