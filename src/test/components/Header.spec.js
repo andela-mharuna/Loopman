@@ -12,7 +12,7 @@ describe('<Header />', () => {
   });
 
   it('renders the title', () => {
-    const wrapper = render(<Header title="LoopmanFavourites" />);
-    expect(wrapper.text()).to.contain('LoopmanFavourites');
+    const wrapper = render(<Header title="LoopmanNews SourcesFavouritesLogin" />);
+    expect(wrapper.text()).to.contain('LoopmanNews SourcesFavouritesLogin');
   });
 });
