@@ -2,11 +2,11 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import * as newsActions from '../../actions/newsActions';
-import newsstores from '../../stores/articlesStore';
+import newsstores from '../../stores/sourcesStore';
 import Dispatcher from '../../dispatcher/dispatcher';
 import newsConstants from '../../constants/newsConstants';
 
-describe('Articles Store', () => {
+describe('Sources Store', () => {
    const newsFromApi = {
     "status": "ok",
     "source": "the-next-web",
@@ -43,17 +43,17 @@ it('should have a addChangeListener function', () => {
     expect(newsstores.addChangeListener).to.be.a('function');
   }); 
 
-  it('should receive headlines from dispatcher', () => {
+  it('should receive sources from dispatcher', () => {
     Dispatcher.dispatch({
-        actionType: newsConstants.GET_NEWS_ARTICLES,
+        actionType: newsConstants.GET_NEWS_SOURCES,
         data: newsFromApi
     });       
-    expect(newsstores.fetchNewsArticles()).to.eql(newsFromApi);
+    expect(newsstores.fetchNewsSources()).to.eql(newsFromApi);
   });
 
   it('should emit change on receiving headlines from dispatcher', () => {
     Dispatcher.dispatch({
-        actionType: newsConstants.GET_NEWS_ARTICLES,
+        actionType: newsConstants.GET_NEWS_SOURCES,
         data: newsFromApi
     });       
     expect(newsstores.emit('change')).to.exist;
