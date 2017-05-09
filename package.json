@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --progress --colors --hot",
     "dev": "webpack-dev-server --progress --colors --hot",
     "build": "webpack",
-    "test": "mocha -r mock-local-storage  --compilers js:babel-core/register --colors ./src/test/components/*.spec.js",
+    "test": "mocha -r mock-local-storage  --compilers js:babel-core/register --colors ./src/test/*/*.spec.js",
     "test:watch": "npm test -- --watch"
   },
   "repository": {

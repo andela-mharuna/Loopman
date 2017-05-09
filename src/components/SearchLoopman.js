@@ -45,7 +45,7 @@ class SearchLoopman extends React.Component {
       <div className="col-sm-8 col-sm-offset-2">
         <input
           className="form-control" type="text" name=""
-          value={this.state.searchValue} onChange={this.handleChange.bind} placeholder="Find source..."
+          value={this.state.searchValue} onChange={this.handleChange} placeholder="Find source..."
         />
 
         <h3>All Sources: </h3>
