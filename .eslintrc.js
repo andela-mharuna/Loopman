@@ -15,6 +15,8 @@ module.exports = {
         "sinon": true,
         "$": true,
         "window": true,
-        "expect": true
+        "expect": true,
+        "location": true,
+        "document": true
     }
 };
