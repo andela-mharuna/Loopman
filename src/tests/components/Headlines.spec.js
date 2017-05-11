@@ -7,6 +7,7 @@ describe('<Headlines />', () => {
   let wrapper;
   const initialState = {
     articles: [],
+    loading: true,
   };
 
   beforeEach(() => {
