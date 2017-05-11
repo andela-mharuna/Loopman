@@ -9,6 +9,7 @@ class SearchLoopman extends React.Component {
     this.state = {
       sources: [],
       searchValue: '',
+      loading: true,
     };
 
     this.fetchNewsSources = this.fetchNewsSources.bind(this);
@@ -24,7 +25,7 @@ class SearchLoopman extends React.Component {
     newsActions.getNewsSources();
   }
   fetchNewsSources() {
-    this.setState({ sources: newsstores.fetchNewsSources() });
+    this.setState({ sources: newsstores.fetchNewsSources(), loading: false });
   }
   componentDidMount() {
     this.getNewsSourcesFromActions();
@@ -39,6 +40,17 @@ class SearchLoopman extends React.Component {
     const searchValue = this.state.searchValue.trim().toLowerCase();
     const sources = this.state.sources
       .filter(source => source.name.toLowerCase().match(searchValue));
+    const MainArticle = sources.map((source, index) => <li id={index} className="list-group-item" key={index}>{source.name} &emsp;
+        {source.sortBysAvailable.map((option, index) => 
+        <a style={{textAlign: 'right'}} className="btn btn-default" key={index}
+          href={`#/headlines?source=${source.id}&sortBy=${option}`}>
+            {option}&nbsp; 
+        </a>)}
+      </li>)
+
+    const showLoading = <h2>Loading....</h2>;
+
+    const display = this.state.loading ? showLoading : MainArticle;
 
     return (
       <div className="container-fluid">
@@ -50,13 +62,7 @@ class SearchLoopman extends React.Component {
 
         <h3>All Sources: </h3>
         <ul className="list-group">
-          {sources.map((source, index) => <li id={index} className="list-group-item" key={index}>{source.name} &emsp;
-            {source.sortBysAvailable.map((option, index) => 
-            <a style={{textAlign: 'right'}} className="btn btn-default" key={index}
-              href={`#/headlines?source=${source.id}&sortBy=${option}`}>
-               {option}&nbsp; 
-            </a>)}
-          </li>)}
+          {display}
         </ul>
       </div>
       </div>

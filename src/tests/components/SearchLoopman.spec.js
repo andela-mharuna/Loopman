@@ -8,6 +8,7 @@ describe('<SearchLoopman />', () => {
   const initialState = {
     sources: [],
     searchValue: '',
+    loading: true,
   };
 
   beforeEach(() => {
