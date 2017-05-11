@@ -41,7 +41,8 @@ class SearchLoopman extends React.Component {
     const sources = this.state.sources
       .filter(source => source.name.toLowerCase().match(searchValue));
 
-    const mainArticle = sources.map((source, index) => <li id={index} className="list-group-item" 
+    const mainArticle = sources.map((source, index) => <li id={index} 
+    className="list-group-item" 
     key={index}>{source.name} &emsp;
         {source.sortBysAvailable.map((option, index) => 
         <a style={{textAlign: 'right'}} className="btn btn-default" key={index}
@@ -59,7 +60,8 @@ class SearchLoopman extends React.Component {
       <div className="col-sm-8 col-sm-offset-2">
         <input style={{marginTop: 15}}
           className="form-control" type="text" name=""
-          value={this.state.searchValue} onChange={this.handleChange} placeholder="Find source..."
+          value={this.state.searchValue} onChange={this.handleChange} 
+          placeholder="Find source..."
         />
 
         <h3>All Sources: </h3>
