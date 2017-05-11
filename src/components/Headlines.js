@@ -65,7 +65,7 @@ class Headlines extends React.Component {
 
   fetchNewsArticles() {
     this.setState({
-      articles: newStores.fetchNewsArticles(),
+      articles: newsStores.fetchNewsArticles(),
       loading: false,
     });
   }
