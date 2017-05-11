@@ -2,7 +2,14 @@ import React from 'react';
 import * as newsActions from '../actions/newsActions';
 import newsStores from '../stores/articlesStore';
 
-const renderArticles = headlines => headlines.map((headline, index) => (
+/**
+ * renderArticles is a pure function which maps through the response gotten
+ * from newsapi.org articles endpoint.
+ * @param {Array} headlines is the array of data from the api
+ *  that is passed to the renderArticles function.
+ */
+
+const renderArticles = (headlines) => headlines.map((headline, index) => (
   <div className="col-sm-8 col-sm-offset-2" key={index}>
     <div className="panel panel-default">
       <div className="panel-heading">
@@ -38,6 +45,11 @@ const renderArticles = headlines => headlines.map((headline, index) => (
     </div>
   </div>
 ));
+
+/**
+ * This is the component that displays headlines gotten from various
+ * news sources
+ */
 
 class Headlines extends React.Component {
   constructor() {

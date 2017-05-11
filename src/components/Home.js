@@ -1,5 +1,10 @@
 import React from 'react';
 
+/**
+ * This is the welcome page and the landing page where
+ * users log into the application.
+ */
+
 class Home extends React.Component {
   render() {
     return (
