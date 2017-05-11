@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --progress --colors --hot",
     "dev": "webpack-dev-server --progress --colors --hot",
     "build": "webpack",
-    "test": "mocha -r mock-local-storage  --compilers js:babel-core/register --colors ./src/test/*/*.spec.js",
+    "test": "mocha -r mock-local-storage  --compilers js:babel-core/register --colors ./src/tests/*/*.spec.js",
     "test:watch": "npm test -- --watch"
   },
   "repository": {
@@ -61,6 +61,7 @@
     "react-dom": "^15.5.4",
     "react-google-login": "^2.8.9",
     "react-google-login-component": "^0.7.0",
+    "react-iframe": "^1.0.5",
     "react-router": "^3.0.0",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.5"

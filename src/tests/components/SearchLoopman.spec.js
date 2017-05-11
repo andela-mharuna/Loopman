@@ -1,8 +1,6 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
-
 import SearchLoopman from '../../components/SearchLoopman';
 
 describe('<SearchLoopman />', () => {
@@ -26,5 +24,8 @@ describe('<SearchLoopman />', () => {
       .deep
       .equal(initialState);
   });
-  
+  it('should render with className container-fluid', () => {
+        expect(wrapper.prop('className')).to.eql('container-fluid');
+  });  
+
 });
