@@ -42,9 +42,6 @@ class Header extends React.Component {
             <li>
               <Link to="sources">News Sources</Link>
             </li>
-            <li>
-              <Link to="favourites">Favourites</Link>
-            </li>            
           </ul>
           <ul className="nav navbar-nav navbar-right navbar-btn">
             <li>
