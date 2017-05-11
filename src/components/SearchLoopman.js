@@ -1,6 +1,6 @@
 import React from 'react';
 import * as newsActions from '../actions/newsActions';
-import newsstores from '../stores/sourcesStore';
+import newsStores from '../stores/sourcesStore';
 
 class SearchLoopman extends React.Component {
   constructor() {
@@ -17,23 +17,25 @@ class SearchLoopman extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  getNewsSourcesFromActions() {
+    newsActions.getNewsSources();
+  }
+
   handleChange(e) {
     this.setState({ searchValue: e.target.value });
   }
 
-  getNewsSourcesFromActions() {
-    newsActions.getNewsSources();
-  }
   fetchNewsSources() {
-    this.setState({ sources: newsstores.fetchNewsSources(), loading: false });
+    this.setState({ sources: newsStores.fetchNewsSources(), loading: false });
   }
+
   componentDidMount() {
     this.getNewsSourcesFromActions();
-    newsstores.addChangeListener(this.fetchNewsSources);
+    newsStores.addChangeListener(this.fetchNewsSources);
   }
 
   componentWillUnmount() {
-    newsstores.removeChangeListener(this.fetchNewsSources);
+    newsStores.removeChangeListener(this.fetchNewsSources);
   }
 
   render() {
@@ -41,15 +43,19 @@ class SearchLoopman extends React.Component {
     const sources = this.state.sources
       .filter(source => source.name.toLowerCase().match(searchValue));
 
-    const mainArticle = sources.map((source, index) => <li id={index} 
-    className="list-group-item" 
-    key={index}>{source.name} &emsp;
-        {source.sortBysAvailable.map((option, index) => 
-        <a style={{textAlign: 'right'}} className="btn btn-default" key={index}
-          href={`#/headlines?source=${source.id}&sortBy=${option}`}>
-            {option}&nbsp; 
+    const mainArticle = sources.map((source, index) => <li
+      style={{ padding: 22 }}
+      id={index} className="list-group-item"
+      key={index}
+    >{source.name} &emsp;
+      {source.sortBysAvailable.map((option, index) =>
+        <a
+          style={{ marginRight: 10 }} className="btn btn-default pull-right"
+          key={index} href={`#/headlines?source=${source.id}&sortBy=${option}`}
+        >
+          {option}&nbsp;
         </a>)}
-      </li>)
+    </li>);
 
     const showLoading = <img src="src/images/loader.gif" />;
 
@@ -57,18 +63,19 @@ class SearchLoopman extends React.Component {
 
     return (
       <div className="container-fluid">
-      <div className="col-sm-8 col-sm-offset-2">
-        <input style={{marginTop: 15}}
-          className="form-control" type="text" name=""
-          value={this.state.searchValue} onChange={this.handleChange} 
-          placeholder="Find source..."
-        />
+        <div className="col-sm-8 col-sm-offset-2">
+          <input
+            style={{ marginTop: 15 }}
+            className="form-control" type="text" name=""
+            value={this.state.searchValue} onChange={this.handleChange}
+            placeholder="Find source..."
+          />
 
-        <h3>All Sources: </h3>
-        <ul className="list-group">
-          {display}
-        </ul>
-      </div>
+          <h3>All Sources: </h3>
+          <ul className="list-group">
+            {display}
+          </ul>
+        </div>
       </div>
     );
   }

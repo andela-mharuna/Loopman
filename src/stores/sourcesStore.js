@@ -31,6 +31,6 @@ class NewsStores extends EventEmitter {
 
 }
 
-const newsstores = new NewsStores();
-Dispatcher.register(newsstores.handleNewsAction.bind(newsstores));
-export default newsstores;
+const newsStores = new NewsStores();
+Dispatcher.register(newsStores.handleNewsAction.bind(newsStores));
+export default newsStores;

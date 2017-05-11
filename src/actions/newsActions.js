@@ -1,5 +1,5 @@
 import * as newsAPI from '../utils/newsAPI';
-import Dispatcher from '../dispatcher/dispatcher.js';
+import Dispatcher from '../dispatcher/dispatcher';
 import newsConstants from '../constants/newsConstants';
 
 export function getNewsSources() {

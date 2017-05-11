@@ -16,6 +16,7 @@ module.exports = {
         "$": true,
         "window": true,
         "expect": true,
-        "location": true
+        "location": true,
+        "document": true
     }
 };
