@@ -8,7 +8,7 @@ class scrapedNews extends React.Component{
     }
 
     render(){
-        const scrapedNewsUrl = this.props.location.search.slice(8);
+        const scrapedNewsUrl = this.props.location.search.slice(8) + "&output=embed";
         return (
             <div>
                 <Iframe url={scrapedNewsUrl}
