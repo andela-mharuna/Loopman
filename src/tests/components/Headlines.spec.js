@@ -1,8 +1,6 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
-
 import Headlines from '../../components/Headlines';
 
 describe('<Headlines />', () => {
@@ -28,6 +26,16 @@ describe('<Headlines />', () => {
       .to
       .deep
       .equal(initialState);
+  });
+
+  it('should have  a render function', () => {
+    expect(wrapper.render).to.exist;
+      
+  });
+
+  it('should have a render function of type function', () => {
+    expect(wrapper.render).to.be.a('function');
+      
   });
 
 });

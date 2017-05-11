@@ -34,7 +34,7 @@ describe('News Actions', () => {
     expect(newsActions.getNewsSources).to.exist;
   }); 
 
-  it('should be an object', () => {
+  it('should be a function', () => {
     expect(newsActions.getNewsSources).to.be.a('function');
   }); 
 

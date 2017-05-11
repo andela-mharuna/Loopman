@@ -1,8 +1,6 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow, render } from 'enzyme';
-import sinon from 'sinon';
-
 import Header from '../../components/Header';
 
 describe('<Header />', () => {

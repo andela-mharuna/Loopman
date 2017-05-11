@@ -2,22 +2,23 @@ import React from 'react';
 import * as newsActions from '../actions/newsActions';
 import newsstores from '../stores/articlesStore';
 
-const renderArticles = (data) => data.map((article, index) => (
+const renderArticles = (headlines) => headlines.map((headline, index) => (
   <div className="col-sm-8 col-sm-offset-2" key={index}>
     <div className="panel panel-default">
       <div className="panel-heading">
-        <h4> {article.publishedAt && article.publishedAt.slice(0, 10)} - {article.title} </h4>
+        <h4> {headline.publishedAt && headline.publishedAt.slice(0, 10)} - {headline.title} </h4>
       </div>
 
       <div className="panel-body">
         <div className="row">
           <div className="col-sm-4">
-            <img width='200' height='150' src={article.urlToImage} alt='image' />
+            <img width='200' height='150' src={headline.urlToImage} alt='image' />
           </div>
           <div className="col-sm-8">
-            {article.description}
+            {headline.description}
             <br/> <br/>
-            <a className="btn btn-primary" href={article.url} target="_blank">View Article</a>
+            <a style={{marginRight: 10}} className="btn btn-primary" href={headline.url} target="_blank">View In Browser</a>
+            <a className="btn btn-primary" href={`#/more?source=${headline.url}`}>View In App</a>
           </div>
 
         </div>
@@ -54,13 +55,13 @@ class Headlines extends React.Component {
   }
 
   render() {
-    const data = this.state.articles.articles;
+    const headlines = this.state.articles.articles;
     const newSourceName = this.state.articles.source;
      return (
       <div>
         <h2 style={{textAlign:'center'}}>News From {newSourceName && newSourceName.split('-').join(' ').toUpperCase()}</h2>
         <br />
-        {data && <div>{renderArticles(data)}</div>}
+        {headlines && <div>{renderArticles(headlines)}</div>}
       </div>
     );
   }
