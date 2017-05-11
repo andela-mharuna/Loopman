@@ -8,20 +8,17 @@ A news feed application that delivers headlines from over 70 news source.
 
 This application lets you view headlines and news headlines from various sources(e.g Al Jazeera,BuzzFeed, CNN, Bild, Ars Technica e.t.c).
 
-### Key Features
+### Features
 
 * Google+ sign-in 
 * List of news sites available
 * View news for preferred source
-* Choose Sort By type e.g Top, Latest
+* Sort through news headlines based
 * Lint to view full headline in browser and also within the app
-
-### How to use:
-* Go to https://andela-loopman.herokuapp.com to use this app in your browser
 
 ### Local Installation Guide
 
-* Download/Clone the repository
+* Download/Clone this repository
 * Install the dependencies using npm install.
 * Run npm start to start the application.
 * To test: run npm test.
@@ -37,15 +34,12 @@ This application lets you view headlines and news headlines from various sources
 * chai
 * Enzyme
 
-### Resources
-* newsapi.org
+### FAQs
+###### How do I use this app?
+* Go to https://andela-loopman.herokuapp.com to use this app in your browser
 
-### To Contribute: 
+###### Are there local news sources available in the app?
+* Not yet
 
-* Fork this repository to your github account.
-* Clone your repository: git clone path/to/remote/repo
-* Navigate to your local repository folder
-* Create your feature branch: git checkout -b new-feature
-* Commit your changes: git commit -m "Changes Made"
-* Push to the remote branch: git push origin new-feature
-* Create a pull request
+###### Can I access the news headlines without signing into the app?
+* No
