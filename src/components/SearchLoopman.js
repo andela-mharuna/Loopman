@@ -40,7 +40,7 @@ class SearchLoopman extends React.Component {
     const searchValue = this.state.searchValue.trim().toLowerCase();
     const sources = this.state.sources
       .filter(source => source.name.toLowerCase().match(searchValue));
-      
+
     const MainArticle = sources.map((source, index) => <li id={index} className="list-group-item" key={index}>{source.name} &emsp;
         {source.sortBysAvailable.map((option, index) => 
         <a style={{textAlign: 'right'}} className="btn btn-default" key={index}
@@ -49,7 +49,7 @@ class SearchLoopman extends React.Component {
         </a>)}
       </li>)
 
-    const showLoading = <h2>Loading....</h2>;
+    const showLoading = <img src="src/images/loader.gif" />;
 
     const display = this.state.loading ? showLoading : MainArticle;
 
