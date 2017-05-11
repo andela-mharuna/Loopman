@@ -2,16 +2,50 @@
 
 
 # Loopman
-A React-Flux news feed application
+A news feed application that delivers headlines from over 70 news source.
 
-## To install my application on your local machine:
-* clone/download this repository
+### Introduction
 
-## To start my application: 
-* Navigate to the folder you installed it, then run npm start
+This application lets you view headlines and news headlines from various sources(e.g Al Jazeera,BuzzFeed, CNN, Bild, Ars Technica e.t.c).
 
-## To test my application:
-* Run npm test
+### Key Features
 
-## To view my application in the browser:
-* Go to https://andela-loopman.herokuapp.com
+* Google+ sign-in 
+* List of news sites available
+* View news for preferred source
+* Choose Sort By type e.g Top, Latest
+* Lint to view full headline in browser and also within the app
+
+### How to use:
+* Go to https://andela-loopman.herokuapp.com to use this app in your browser
+
+### Local Installation Guide
+
+* Download/Clone the repository
+* Install the dependencies using npm install.
+* Run npm start to start the application.
+* To test: run npm test.
+
+### Core Technologies
+
+* React
+* Node.js (npm)
+* ES6
+* Webpack
+* Babel
+* Mocha
+* chai
+* Enzyme
+
+### Resources
+* newsapi.org
+
+### To Contribute: 
+
+* Fork this repository to your github account.
+* Clone your repository: git clone path/to/remote/repo
+* Navigate to your local repository folder
+* Create your feature branch: git checkout -b new-feature
+* Commit your changes: git commit -m "Changes Made"
+* Push to the remote branch: git push origin new-feature
+* Create a pull request
