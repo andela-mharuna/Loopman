@@ -10,12 +10,19 @@ class Header extends React.Component {
     this.handleLogoutClick = this.handleLogoutClick.bind(this);
   }
 
+  /**
+   * This function is called when a user clicks on the logout button.
+   */
 
   handleLogoutClick() {
     localStorage.removeItem('id_token');
     hashHistory.push('/');
   }
 
+/**
+ * This function displays the component on the page.
+ * The component renders the links in the navigation bar.
+ */
   render() {
     function LogOutButton(props) {
       return (
@@ -38,8 +45,8 @@ class Header extends React.Component {
     return (
       <nav
         className="navbar navbar-default navbar-collapse"
-        style={{ marginBottom: 0 }}
-      >
+        style={{ marginBottom: 0 }}>
+
         <div className="container-fluid">
           <div className="navbar-header">
             <Link className="navbar-brand active" to="/">Loopman</Link>
