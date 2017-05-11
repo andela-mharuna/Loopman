@@ -62,6 +62,7 @@
     "react-google-login": "^2.8.9",
     "react-google-login-component": "^0.7.0",
     "react-iframe": "^1.0.5",
+    "react-loading-spinner": "^1.0.12",
     "react-router": "^3.0.0",
     "react-share": "^1.13.2",
     "webpack": "^2.4.1",

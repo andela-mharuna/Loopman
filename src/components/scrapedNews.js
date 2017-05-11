@@ -2,17 +2,17 @@ import React from 'react';
 import Iframe from 'react-iframe'
 
 class scrapedNews extends React.Component{
-
     componentDidMount(){
-        console.log(this.props.location.search.slice(8));
+        console.log("helloooo");
+        <div style={{backgroundImage:(<i className="fa fa-spinner"></i>)}}/>
     }
 
     render(){
-        const scrapedNewsUrl = this.props.location.search.slice(8) + "&output=embed";
+        const scrapedNewsUrl = this.props.location.search.slice(8);
         return (
-            <div>
+            <div>                
                 <Iframe url={scrapedNewsUrl}
-                width="1050px"
+                width="100%"
                 height="1050px"
                 display="initial"
                 position="relative"
