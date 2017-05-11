@@ -41,7 +41,8 @@ class SearchLoopman extends React.Component {
     const sources = this.state.sources
       .filter(source => source.name.toLowerCase().match(searchValue));
 
-    const MainArticle = sources.map((source, index) => <li id={index} className="list-group-item" key={index}>{source.name} &emsp;
+    const mainArticle = sources.map((source, index) => <li id={index} className="list-group-item" 
+    key={index}>{source.name} &emsp;
         {source.sortBysAvailable.map((option, index) => 
         <a style={{textAlign: 'right'}} className="btn btn-default" key={index}
           href={`#/headlines?source=${source.id}&sortBy=${option}`}>
@@ -51,7 +52,7 @@ class SearchLoopman extends React.Component {
 
     const showLoading = <img src="src/images/loader.gif" />;
 
-    const display = this.state.loading ? showLoading : MainArticle;
+    const display = this.state.loading ? showLoading : mainArticle;
 
     return (
       <div className="container-fluid">

@@ -33,13 +33,14 @@ class Headlines extends React.Component {
 
     this.state = {
       articles: [],
+      loading: true,
     };
 
     this.fetchNewsArticles = this.fetchNewsArticles.bind(this);
   }
 
   fetchNewsArticles() {
-    this.setState({ articles: newsstores.fetchNewsArticles() });
+    this.setState({ articles: newsstores.fetchNewsArticles(), loading: false  });
   }
 
   componentDidMount() {
@@ -57,11 +58,15 @@ class Headlines extends React.Component {
   render() {
     const headlines = this.state.articles.articles;
     const newSourceName = this.state.articles.source;
+    const mainHeadlines = <div>{headlines && renderArticles(headlines)}</div>;
+    const showLoading = <img src="src/images/loader.gif" />;
+    const display = this.state.loading ? showLoading : mainHeadlines;
+
      return (
       <div>
-        <h2 style={{textAlign:'center'}}>News From {newSourceName && newSourceName.split('-').join(' ').toUpperCase()}</h2>
+        <h2 style={{textAlign:'center'}}>News From { newSourceName && newSourceName.split('-').join(' ').toUpperCase() }</h2>
         <br />
-        {headlines && <div>{renderArticles(headlines)}</div>}
+        { display }
       </div>
     );
   }
