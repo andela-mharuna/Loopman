@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import * as newsActions from '../../actions/newsActions';
-import newsstores from '../../stores/articlesStore';
+import newsStores from '../../stores/articlesStore';
 import Dispatcher from '../../dispatcher/dispatcher';
 import newsConstants from '../../constants/newsConstants';
 
@@ -27,35 +27,35 @@ describe('Articles Store', () => {
             "url": "https://thenextweb.com/insider/2017/05/09/mozilla-eu-copyright-laws-leaflets/",
             "urlToImage": "https://cdn2.tnwcdn.com/wp-content/blogs.dir/1/files/2017/05/Paperstorm.png",
             "publishedAt": "2017-05-09T15:08:33Z"
-       }   
+       }
     ]
   };
 
   it('should exist', () => {
-    expect(newsstores).to.exist;
-  }); 
+    expect(newsStores).to.exist;
+  });
 
   it('should be an object', () => {
-    expect(newsstores).to.be.an('object');
-  }); 
+    expect(newsStores).to.be.an('object');
+  });
 
 it('should have a addChangeListener function', () => {
-    expect(newsstores.addChangeListener).to.be.a('function');
-  }); 
+    expect(newsStores.addChangeListener).to.be.a('function');
+  });
 
   it('should receive headlines from dispatcher', () => {
     Dispatcher.dispatch({
         actionType: newsConstants.GET_NEWS_ARTICLES,
         data: newsFromApi
-    });       
-    expect(newsstores.fetchNewsArticles()).to.eql(newsFromApi);
+    });
+    expect(newsStores.fetchNewsArticles()).to.eql(newsFromApi);
   });
 
   it('should emit change on receiving headlines from dispatcher', () => {
     Dispatcher.dispatch({
         actionType: newsConstants.GET_NEWS_ARTICLES,
         data: newsFromApi
-    });       
-    expect(newsstores.emit('change')).to.exist;
-  });    
+    });
+    expect(newsStores.emit('change')).to.exist;
+  });
 });

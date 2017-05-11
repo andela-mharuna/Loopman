@@ -26,23 +26,23 @@ describe('News Actions', () => {
             "url": "https://thenextweb.com/insider/2017/05/09/mozilla-eu-copyright-laws-leaflets/",
             "urlToImage": "https://cdn2.tnwcdn.com/wp-content/blogs.dir/1/files/2017/05/Paperstorm.png",
             "publishedAt": "2017-05-09T15:08:33Z"
-       }   
+       }
     ]
   };
 
   it('should exist', () => {
     expect(newsActions.getNewsSources).to.exist;
-  }); 
+  });
 
   it('should be a function', () => {
     expect(newsActions.getNewsSources).to.be.a('function');
-  }); 
+  });
 
 it('should send sources to dispatcher', () => {
     Dispatcher.dispatch({
         actionType: newsConstants.GET_NEWS_SOURCES,
         data: newsFromApi
-    });       
+    });
     expect(newsstores.fetchNewsSources()).to.eql(newsFromApi);
   });
 

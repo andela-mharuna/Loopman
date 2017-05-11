@@ -19,7 +19,10 @@ class Header extends React.Component {
   render() {
     function LogOutButton(props) {
       return (
-        <button className="btn btn-default btn-danger" onClick={props.onClick}>Log out
+        <button
+          className="btn btn-default btn-danger"
+          onClick={props.onClick}
+        >Log out
         </button>
       );
     }
@@ -28,12 +31,15 @@ class Header extends React.Component {
     const IsLoggedIn = localStorage.getItem('id_token');
     if (IsLoggedIn) {
       button = <LogOutButton onClick={this.handleLogoutClick} />;
-    }else{
+    } else {
       button = <Login />;
     }
 
     return (
-      <nav className="navbar navbar-default navbar-collapse" style={{marginBottom: 0}}>
+      <nav
+        className="navbar navbar-default navbar-collapse"
+        style={{ marginBottom: 0 }}
+      >
         <div className="container-fluid">
           <div className="navbar-header">
             <Link className="navbar-brand active" to="/">Loopman</Link>
