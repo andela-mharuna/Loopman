@@ -13,15 +13,15 @@ const storeUserData = (response) => {
 };
 
 const responseGoogle = (response) => {
-  console.log(response);
+  alert('Oops! Something went wrong. Please try again');
 };
 
 const Login = () => (
   <div>
     <GoogleLogin
-      clientId='386303946943-jflho43lqvq3fg2eft9hkddb0aka06h4.apps.googleusercontent.com'
-      buttonText='Login'
-      className='btn btn-primary'
+      clientId="386303946943-jflho43lqvq3fg2eft9hkddb0aka06h4.apps.googleusercontent.com"
+      buttonText="Login"
+      className="btn btn-primary"
       onSuccess={storeUserData}
       onFailure={responseGoogle}
     />

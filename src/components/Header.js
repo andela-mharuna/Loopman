@@ -44,8 +44,9 @@ class Header extends React.Component {
 
     return (
       <nav
-        className="navbar navbar-default navbar-collapse"
-        style={{ marginBottom: 0 }}>
+        className="navbar navbar-inverse navbar-collapse"
+        style={{ marginBottom: 0 }}
+      >
 
         <div className="container-fluid">
           <div className="navbar-header">

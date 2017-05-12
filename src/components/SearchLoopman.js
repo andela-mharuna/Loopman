@@ -67,11 +67,14 @@ class SearchLoopman extends React.Component {
     newsStores.removeChangeListener(this.fetchNewsSources);
   }
 
+/**
+ * This is a React lifecyle method that is triggered when state of the
+ * component changes.
+ */
   render() {
-
     /**
-     * Hers, the javascript filter and match function are used to filter through
-     * the listed sources and return the matched sources
+     * Here, the javascript filter and match function are used to filter
+     * through the listed sources and return the matched sources
      */
 
     const searchValue = this.state.searchValue.trim().toLowerCase();

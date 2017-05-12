@@ -9,7 +9,7 @@ import newsStores from '../stores/articlesStore';
  *  that is passed to the renderArticles function.
  */
 
-const renderArticles = (headlines) => headlines.map((headline, index) => (
+const renderArticles = headlines => headlines.map((headline, index) => (
   <div className="col-sm-8 col-sm-offset-2" key={index}>
     <div className="panel panel-default">
       <div className="panel-heading">
@@ -91,7 +91,7 @@ class Headlines extends React.Component {
 
     return (
       <div>
-        <h2 style={{ textAlign: 'center' }}>News From
+        <h2 style={{ textAlign: 'center' }}>News From &nbsp;
           {newSourceName &&
              newSourceName.split('-').join(' ').toUpperCase()}</h2>
         <br />
