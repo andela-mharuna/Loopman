@@ -7,7 +7,7 @@ import Iframe from 'react-iframe';
  * sites into this application.
  */
 
-class scrapedNews extends React.Component{
+class scrapedNews extends React.Component {
   render() {
     const scrapedNewsUrl = this.props.location.search.slice(8);
 

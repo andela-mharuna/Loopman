@@ -7,6 +7,8 @@ import Home from './components/Home';
 import Headlines from './components/Headlines';
 import scrapedNews from './components/scrapedNews';
 import SearchLoopman from './components/SearchLoopman';
+import NotFoundComponent from './components/NotFoundComponent';
+
 
 /**
  * These are variables passed to the default requireAuth function
@@ -33,6 +35,7 @@ const Root = () => (
         <Route path="/more" component={scrapedNews} onEnter={requireAuth} />
         <Route path="/login" component={Login} />
       </Route>
+      <Route path="*" component={NotFoundComponent} />
     </Router>
   </div>
 );

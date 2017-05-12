@@ -2,25 +2,25 @@
   "name": "loopman",
   "version": "1.0.0",
   "description": "A React-Flux news feed application",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "start": "webpack-dev-server --progress --colors --hot",
     "dev": "webpack-dev-server --progress --colors --hot",
     "build": "webpack",
     "test": "nyc --reporter=html --reporter=text mocha -r mock-local-storage  --compilers js:babel-core/register --colors ./src/tests/*/*.spec.js",
-    "test:watch": "npm test -- --watch",  
+    "test:watch": "npm test -- --watch",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Memuna01/Loopman.git"
+    "url": "git+https://github.com/andela-loopman/Loopman.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Memuna01/Loopman/issues"
+    "url": "https://github.com/andela-loopman/Loopman/issues"
   },
-  "homepage": "https://github.com/Memuna01/Loopman#readme",
+  "homepage": "https://github.com/andela-loopman/Loopman#readme",
   "devDependencies": {
     "chai": "^3.5.0",
     "coveralls": "^2.13.1",
@@ -31,9 +31,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
-    "jsdom": "^10.1.0",
     "mocha": "^3.3.0",
-    "mocha-jsdom": "^1.1.0",
     "mock-local-storage": "^1.0.2",
     "nyc": "^10.3.2",
     "react-dom": "^15.5.4",
@@ -65,7 +63,6 @@
     "react-google-login": "^2.8.9",
     "react-google-login-component": "^0.7.0",
     "react-iframe": "^1.0.5",
-    "react-loading-spinner": "^1.0.12",
     "react-router": "^3.0.0",
     "react-share": "^1.13.2",
     "webpack": "^2.4.1",
