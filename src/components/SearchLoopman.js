@@ -2,6 +2,12 @@ import React from 'react';
 import * as newsActions from '../actions/newsActions';
 import newsStores from '../stores/sourcesStore';
 
+/**
+ * This component displays the list of all news sources available
+ * in the application and allows you searxh through that list using
+ * an input tag.
+ */
+
 class SearchLoopman extends React.Component {
   constructor() {
     super();
@@ -17,28 +23,60 @@ class SearchLoopman extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  /**
+   * This function triggers the flux action which in turn makes a call
+   * to the newsapi.org api.
+   */
+
   getNewsSourcesFromActions() {
     newsActions.getNewsSources();
   }
 
-  handleChange(e) {
-    this.setState({ searchValue: e.target.value });
+  /**
+   *
+   * This function handles event change on entering a search value into
+   * the input field
+   */
+  handleChange(event) {
+    this.setState({ searchValue: event.target.value });
   }
+
+  /**
+   * This function updates the state of the component with information
+   * fetched from the flux store.
+   */
 
   fetchNewsSources() {
     this.setState({ sources: newsStores.fetchNewsSources(), loading: false });
   }
+
+  /**
+   *  This is react lifecycle function that is called once the component mounts
+   */
 
   componentDidMount() {
     this.getNewsSourcesFromActions();
     newsStores.addChangeListener(this.fetchNewsSources);
   }
 
+  /**
+   * This function is called once the component unmounts
+   */
+
   componentWillUnmount() {
     newsStores.removeChangeListener(this.fetchNewsSources);
   }
 
+/**
+ * This is a React lifecyle method that is triggered when state of the
+ * component changes.
+ */
   render() {
+    /**
+     * Here, the javascript filter and match function are used to filter
+     * through the listed sources and return the matched sources
+     */
+
     const searchValue = this.state.searchValue.trim().toLowerCase();
     const sources = this.state.sources
       .filter(source => source.name.toLowerCase().match(searchValue));
@@ -57,6 +95,9 @@ class SearchLoopman extends React.Component {
         </a>)}
     </li>);
 
+    /**
+     * This displays a spinner gif before the page renders fully.
+     */
     const showLoading = <img src="src/images/loader.gif" />;
 
     const display = this.state.loading ? showLoading : mainArticle;

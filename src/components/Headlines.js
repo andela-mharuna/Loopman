@@ -2,6 +2,13 @@ import React from 'react';
 import * as newsActions from '../actions/newsActions';
 import newsStores from '../stores/articlesStore';
 
+/**
+ * renderArticles is a pure function which maps through the response gotten
+ * from newsapi.org articles endpoint.
+ * @param {Array} headlines is the array of data from the api
+ *  that is passed to the renderArticles function.
+ */
+
 const renderArticles = headlines => headlines.map((headline, index) => (
   <div className="col-sm-8 col-sm-offset-2" key={index}>
     <div className="panel panel-default">
@@ -39,6 +46,11 @@ const renderArticles = headlines => headlines.map((headline, index) => (
   </div>
 ));
 
+/**
+ * This is the component that displays headlines gotten from various
+ * news sources
+ */
+
 class Headlines extends React.Component {
   constructor() {
     super();
@@ -53,7 +65,7 @@ class Headlines extends React.Component {
 
   fetchNewsArticles() {
     this.setState({
-      articles: newStores.fetchNewsArticles(),
+      articles: newsStores.fetchNewsArticles(),
       loading: false,
     });
   }
@@ -79,7 +91,7 @@ class Headlines extends React.Component {
 
     return (
       <div>
-        <h2 style={{ textAlign: 'center' }}>News From
+        <h2 style={{ textAlign: 'center' }}>News From &nbsp;
           {newSourceName &&
              newSourceName.split('-').join(' ').toUpperCase()}</h2>
         <br />

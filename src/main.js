@@ -7,7 +7,16 @@ import Home from './components/Home';
 import Headlines from './components/Headlines';
 import scrapedNews from './components/scrapedNews';
 import SearchLoopman from './components/SearchLoopman';
+import NotFoundComponent from './components/NotFoundComponent';
 
+
+/**
+ * These are variables passed to the default requireAuth function
+ * @param {String} nextState
+ * @param {String} replace
+ * The requireAuth function validates that the user is signed in and
+ * then redirects to the home page if the user is not signed in.
+ */
 const requireAuth = (nextState, replace) => {
   const token = localStorage.getItem('id_token');
   if (!token) {
@@ -26,6 +35,7 @@ const Root = () => (
         <Route path="/more" component={scrapedNews} onEnter={requireAuth} />
         <Route path="/login" component={Login} />
       </Route>
+      <Route path="*" component={NotFoundComponent} />
     </Router>
   </div>
 );
