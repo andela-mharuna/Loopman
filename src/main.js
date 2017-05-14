@@ -8,7 +8,7 @@ import Headlines from './components/Headlines';
 import scrapedNews from './components/scrapedNews';
 import SearchLoopman from './components/SearchLoopman';
 import NotFoundComponent from './components/NotFoundComponent';
-
+require('./styles/App.scss');
 
 /**
  * These are variables passed to the default requireAuth function

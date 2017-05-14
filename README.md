@@ -15,7 +15,7 @@ This application lets you view headlines from 70 different sources(e.g Al Jazeer
 * Sort through news headlines.
 * Link to view full news in browser and also within the app.
 
-### Local Installation Guide
+### How To Use
 
 * Download/Clone this repository.
 * Install the dependencies using npm install.
@@ -24,22 +24,20 @@ This application lets you view headlines from 70 different sources(e.g Al Jazeer
 
 ### Core Technologies
 
-* React
-* React-Router and ReactDom
-* Node.js (npm)
-* ES6
-* Webpack
-* Babel
-* Mocha
-* Chai
-* Enzyme
+* React: For the User Interface (https://facebook.github.io/react/)
+* React-Router: For routing in the app
+ (https://www.npmjs.com/package/react-router)
+* ReactDom: This package serves as the entry point of the DOM-related rendering
+ paths(https://www.npmjs.com/package/react-dom)
+* Node.js (npm): NPM was used to install all node packages
+ (https://nodejs.org/en/)
+* ES6: Used for React classes
+* Webpack: webpack bundles my modules into one static asset
+ (https://webpack.github.io/)
+* Babel: For transpiling ES6 syntax to ES5(https://babeljs.io/)
+* Mocha: For writing tests(https://mochajs.org/)
+* Chai: Expect statements in my test suites(http://chaijs.com/)
+* Enzyme: Used with Mocha and chai to test React components
+ (https://github.com/airbnb/enzyme)
 
-### FAQs
-###### How do I use this app?
-* Go to https://andela-loopman.herokuapp.com to use this app in your browser
-
-###### Are there local news sources available in the app?
-* Not yet
-
-###### Can I access the news headlines without signing into the app?
-* No
+### How To Contribute
