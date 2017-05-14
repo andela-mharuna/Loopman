@@ -6,17 +6,17 @@ import sinon from 'sinon';
 import Login from '../../components/Login';
 import GoogleLogin from 'react-google-login';
 
-describe('<Login />', () => {
+describe('Login Component', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(<Login />);
   });
 
-  it('renders 1 <GoogleLogin /> component', () => {
+  it('should render 1 GoogleLogin component', () => {
     expect(wrapper.find(GoogleLogin)).to.have.length(1);
   });
 
-  it('renders as a <div>', () => {
+  it('should render as a <div>', () => {
     expect(wrapper.type()).to.eql('div');
   });
 
