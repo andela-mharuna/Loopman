@@ -3,14 +3,14 @@ import { expect } from 'chai';
 import { shallow, render } from 'enzyme';
 import Header from '../../components/Header';
 
-describe('<Header />', () => {
+describe('Header Component', () => {
   it('should have 1 nav tag', () => {
     const wrapper = shallow(<Header />);
     expect(wrapper.find('nav')).to.have.length(1);
   });
 
-  it('renders the title', () => {
-    const wrapper = render(<Header title="LoopmanNews SourcesLogin" />);
-    expect(wrapper.text()).to.contain('LoopmanNews SourcesLogin');
+  it('should render the Links in the navigation bar', () => {
+    const wrapper = render(<Header title="Loopman Login with Google+" />);
+    expect(wrapper.text()).to.contain('Loopman Login with Google+');
   });
 });

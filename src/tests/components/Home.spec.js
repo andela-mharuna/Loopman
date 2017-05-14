@@ -3,14 +3,14 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import Home from '../../components/Home';
 
-describe('<Home />', () => {
+describe('Home Component', () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = shallow(<Home />);
   });
 
-  it('renders as a <div>', () => {
+  it('should render as a <div>', () => {
     expect(wrapper.type()).to.eql('div');
   });
 
@@ -24,6 +24,6 @@ describe('<Home />', () => {
 
  it('should have a render function', () => {
         expect(wrapper.render).to.be.a('function');
-  });  
+  });
 
 });

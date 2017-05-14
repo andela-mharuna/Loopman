@@ -6,13 +6,13 @@ module.exports = {
          ]
      },
      output: {
-         filename: 'bundle.js' 
+         filename: 'bundle.js'
      },
 
      module: {
          loaders: [
              {
-                test: /\.jsx?$/, 
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
                 query: {

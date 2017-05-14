@@ -46,7 +46,7 @@ it('should have a addChangeListener function', () => {
   it('should receive sources from dispatcher', () => {
     Dispatcher.dispatch({
         actionType: newsConstants.GET_NEWS_SOURCES,
-        data: newsFromApi
+        sources: newsFromApi
     });
     expect(newsStores.fetchNewsSources()).to.eql(newsFromApi);
   });
@@ -54,7 +54,7 @@ it('should have a addChangeListener function', () => {
   it('should emit change on receiving headlines from dispatcher', () => {
     Dispatcher.dispatch({
         actionType: newsConstants.GET_NEWS_SOURCES,
-        data: newsFromApi
+        sources: newsFromApi
     });
     expect(newsStores.emit('change')).to.exist;
   });

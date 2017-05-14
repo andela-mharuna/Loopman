@@ -1,7 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import * as newsActions from '../../actions/newsActions';
-import newsstores from '../../stores/sourcesStore';
+import newsStores from '../../stores/sourcesStore';
 import Dispatcher from '../../dispatcher/dispatcher';
 import newsConstants from '../../constants/newsConstants';
 
@@ -41,9 +41,9 @@ describe('News Actions', () => {
 it('should send sources to dispatcher', () => {
     Dispatcher.dispatch({
         actionType: newsConstants.GET_NEWS_SOURCES,
-        data: newsFromApi
+        sources: newsFromApi
     });
-    expect(newsstores.fetchNewsSources()).to.eql(newsFromApi);
+    expect(newsStores.fetchNewsSources()).to.eql(newsFromApi);
   });
 
 });

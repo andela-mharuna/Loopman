@@ -3,11 +3,12 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import Headlines from '../../components/Headlines';
 
-describe('<Headlines />', () => {
+describe('Headlines Component', () => {
   let wrapper;
   const initialState = {
-    articles: [],
-    loading: true,
+    headlines: [],
+    loading: false,
+    sourceName: "",
   };
 
   beforeEach(() => {
@@ -29,14 +30,14 @@ describe('<Headlines />', () => {
       .equal(initialState);
   });
 
-  it('should have  a render function', () => {
+  it('should have  a render method', () => {
     expect(wrapper.render).to.exist;
-      
+
   });
 
-  it('should have a render function of type function', () => {
+  it('should have a render method of type function', () => {
     expect(wrapper.render).to.be.a('function');
-      
+
   });
 
 });

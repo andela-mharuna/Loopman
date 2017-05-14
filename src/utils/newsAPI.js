@@ -1,11 +1,12 @@
 import axios from 'axios';
+import API_KEY from '../api';
 
-export function getNewsArticlesApi(source, option, callback) {
-  const url = `https://newsapi.org/v1/articles?source=${source}&sortBy=${option}&apiKey=213327409d384371851777e7c7f78dfe`;
-  axios.get(url).then(response => callback(response.data));
-}
+//console.log('api_key:', API_KEY);
 
-export function getNewsSourcesApi(callback) {
-  const url = 'https://newsapi.org/v1/sources';
-  axios.get(url).then(response => callback(response.data.sources));
-}
+export const getNewsArticlesApi = (source, option) =>
+  axios.get(`https://newsapi.org/v1/articles?source=${source}&sortBy=${option}&apiKey=${API_KEY}`)
+    .then(response => response.data);
+
+export const getNewsSourcesApi = () =>
+  axios.get('https://newsapi.org/v1/sources');
+

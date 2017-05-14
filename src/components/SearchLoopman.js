@@ -81,19 +81,22 @@ class SearchLoopman extends React.Component {
     const sources = this.state.sources
       .filter(source => source.name.toLowerCase().match(searchValue));
 
-    const mainArticle = sources.map((source, index) => <li
-      style={{ padding: 22 }}
-      id={index} className="list-group-item"
-      key={index}
-    >{source.name} &emsp;
-      {source.sortBysAvailable.map((option, index) =>
-        <a
-          style={{ marginRight: 10 }} className="btn btn-default pull-right"
-          key={index} href={`#/headlines?source=${source.id}&sortBy=${option}`}
-        >
-          {option}&nbsp;
-        </a>)}
-    </li>);
+    const mainArticle = sources.map((source, index) =>
+      <li
+        style={{ padding: 22, backgroundColor: '#EEF8FC' }}
+        id={index} className="list-group-item"
+        key={index}
+      >{source.name} &emsp;
+
+        {source.sortBysAvailable.map((option, index) =>
+          <a
+            style={{ marginRight: 10 }} className="btn btn-primary pull-right"
+            key={index} href={`#/headlines?source=${source.id}&sortBy=${option}`}
+          >
+            {option[0].toUpperCase() + option.substring(1)}&nbsp;
+          </a>,
+        )}
+      </li>);
 
     /**
      * This displays a spinner gif before the page renders fully.
@@ -112,7 +115,7 @@ class SearchLoopman extends React.Component {
             placeholder="Find source..."
           />
 
-          <h3>All Sources: </h3>
+          <h3>News Sources: </h3>
           <ul className="list-group">
             {display}
           </ul>

@@ -1,21 +1,16 @@
 import React from 'react';
 import Header from './Header';
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className="container-fluid">
-        <div>
-          <Header />
-        </div>
-        <div>
-          {this.props.children}
-        </div>
-        <div />
-      </div>
-
-    );
-  }
-}
+const App = props => (
+  <div className="container-fullwidth">
+    <div>
+      <Header />
+    </div>
+    <div>
+      {props.children}
+    </div>
+    <div />
+  </div>
+);
 
 export default App;

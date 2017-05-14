@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import SearchLoopman from '../../components/SearchLoopman';
 
-describe('<SearchLoopman />', () => {
+describe('SearchLoopman Component', () => {
   let wrapper;
   const initialState = {
     sources: [],
@@ -15,7 +15,7 @@ describe('<SearchLoopman />', () => {
     wrapper = shallow(<SearchLoopman />);
   });
 
-  it('renders as a <div>', () => {
+  it('should render as a <div>', () => {
     expect(wrapper.type()).to.eql('div');
   });
 
@@ -27,6 +27,6 @@ describe('<SearchLoopman />', () => {
   });
   it('should render with className container-fluid', () => {
         expect(wrapper.prop('className')).to.eql('container-fluid');
-  });  
+  });
 
 });
