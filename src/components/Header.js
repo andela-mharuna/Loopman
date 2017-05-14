@@ -52,10 +52,8 @@ class Header extends React.Component {
 
     return (
       <nav
-        className="navbar navbar-inverse navbar-collapse"
-        style={{ marginBottom: 0 }}
+        className="navbar navbar-inverse navbar-collapse header-nav"
       >
-
         <div className="container-fluid">
           <div className="navbar-header">
             <Link className="navbar-brand active" to="/">Loopman</Link>

@@ -18,8 +18,14 @@ module.exports = {
                 query: {
                     "presets": ['react', 'es2015']
                 }
+              },
+              {
+                test: /\.scss$/,
+                loaders: [
+                  'style-loader', 'css-loader', 'resolve-url-loader', 'sass-loader?sourceMap'
+                ]
+              }
 
-             }
          ]
      }
  }

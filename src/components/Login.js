@@ -25,8 +25,7 @@ const responseGoogle = (response) => {
 const Login = () => (
   <div>
     <GoogleLogin
-      clientId={`386303946943-jflho43lqvq3f
-      g2eft9hkddb0aka06h4.apps.googleusercontent.com`}
+      clientId="386303946943-jflho43lqvq3fg2eft9hkddb0aka06h4.apps.googleusercontent.com"
       className="btn btn-primary"
       onSuccess={storeUserData}
       onFailure={responseGoogle}

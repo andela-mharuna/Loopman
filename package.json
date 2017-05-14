@@ -36,7 +36,11 @@
     "nyc": "^10.3.2",
     "react-dom": "^15.5.4",
     "react-test-renderer": "^15.5.4",
-    "sinon": "^2.2.0"
+    "sinon": "^2.2.0",
+    "css-loader": "^0.28.0",
+    "node-sass": "^4.5.2",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.17.0"
   },
   "dependencies": {
     "axios": "^0.16.1",
@@ -67,6 +71,7 @@
     "react-image": "^1.0.1",
     "react-router": "^3.0.0",
     "react-share": "^1.13.2",
+    "resolve-url-loader": "^2.0.2",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.5"
   },
