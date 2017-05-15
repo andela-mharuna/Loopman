@@ -1,31 +1,46 @@
+const webpack = require('webpack');
+const env = require('dotenv').config().parsed;
+
 module.exports = {
-     devtool: 'eval-source-map',
-     entry: {
-         main: [
-             './src/main.js',
-         ]
-     },
-     output: {
-         filename: 'bundle.js'
-     },
+  devtool: 'eval-source-map',
+  entry: {
+      main: [
+          './src/main.js',
+      ]
+  },
+  output: {
+      filename: 'bundle.js'
+  },
 
-     module: {
-         loaders: [
-             {
-                test: /\.jsx?$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader',
-                query: {
-                    "presets": ['react', 'es2015']
-                }
-              },
-              {
-                test: /\.scss$/,
-                loaders: [
-                  'style-loader', 'css-loader', 'resolve-url-loader', 'sass-loader?sourceMap'
-                ]
-              }
+  plugins: [
+    new webpack.DefinePlugin({
+      'process': {
+        'env': {
+          'API_KEY': JSON.stringify(env.API_KEY)
+        }
+      }
+    })
+  ],
 
-         ]
-     }
+  module: {
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+            "presets": ['react', 'es2015']
+        }
+    },
+
+      {
+        test: /\.scss$/,
+        loaders: [
+          'style-loader', 'css-loader', 'resolve-url-loader', 'sass-loader?sourceMap'
+        ]
+      }
+    ]
+  }
+
+
  }
