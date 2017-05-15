@@ -1,6 +1,7 @@
 import React from 'react';
 import Img from 'react-image';
 import { hashHistory } from 'react-router';
+import Footer from './Footer';
 
 
 /**
@@ -13,7 +14,7 @@ import { hashHistory } from 'react-router';
 export default ({ headlines }) =>
   (<div
     style={{ backgroundColor: '#EEF8FC', paddingTop: 15 }}
-    className="col-sm-8 col-sm-offset-2"
+    className="col-sm-8 col-sm-offset-2 headlines-list"
   >
     {headlines.map((headline, index) => (
       <div className="panel panel-default" key={index}>

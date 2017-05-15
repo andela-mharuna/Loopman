@@ -78,7 +78,7 @@ class Headlines extends React.Component {
     const newSourceName = this.state.sourceName;
     return (
       <div>
-        <h2 style={{ textAlign: 'center' }}>
+        <h2 className="col-sm-8 col-sm-offset-2 headlines-header" style={{ textAlign: 'center' }}>
           <a
             title="previous page" href="#"
             onClick={() => hashHistory.goBack()}

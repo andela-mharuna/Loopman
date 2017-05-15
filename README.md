@@ -30,7 +30,7 @@ Enzyme.
 
 ### User Guide
 
-* Head over to andela-loopman.herokuapp.com to use this app
+* Head over to http://andela-loopman.herokuapp.com to use this app
 
 ### How To Contribute
 

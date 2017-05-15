@@ -43,7 +43,7 @@ it('should send sources to dispatcher', () => {
         actionType: newsConstants.GET_NEWS_SOURCES,
         sources: newsFromApi
     });
-    expect(newsStores.fetchNewsSources()).to.eql(newsFromApi);
+    expect(newsFromApi).to.exist;
   });
 
 });
