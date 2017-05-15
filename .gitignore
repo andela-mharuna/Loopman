@@ -4,4 +4,4 @@ coverage
 .setup.js
 .vscode
 .DS_Store
-src/api.js
+.env
