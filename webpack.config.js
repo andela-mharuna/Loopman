@@ -1,5 +1,9 @@
 const webpack = require('webpack');
-const env = require('dotenv').config().parsed;
+const dotenv = require('dotenv').config();
+
+const env = dotenv.parsed;
+
+console.log(env, JSON.stringify(env.API_KEY));
 
 module.exports = {
   devtool: 'eval-source-map',
