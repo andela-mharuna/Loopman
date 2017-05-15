@@ -4,7 +4,8 @@
   "description": "A React-Flux news feed application",
   "main": "main.js",
   "scripts": {
-    "start": "webpack-dev-server --progress --colors --hot",
+    "start:dev": "webpack-dev-server --progress --colors --hot",
+    "start": "webpack -p && node server.js",
     "dev": "webpack-dev-server --progress --colors --hot",
     "build": "webpack",
     "test": "nyc --reporter=html --reporter=text mocha -r mock-local-storage  --compilers js:babel-core/register --colors ./src/tests/*/*.spec.js",
