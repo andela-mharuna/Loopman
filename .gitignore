@@ -4,3 +4,5 @@ coverage
 .setup.js
 .vscode
 .DS_Store
+.env
+bundle.js

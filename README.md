@@ -5,7 +5,20 @@ A news feed application that delivers headlines from 70 news sources worldwide.
 
 ### Introduction
 
-This application lets you view headlines from 70 different sources(e.g Al Jazeera,BuzzFeed, CNN, Bild, Ars Technica e.t.c).
+Loopman is an application that lets you view headlines from 70 different
+news sources worldwide(e.g Al Jazeera,BuzzFeed, CNN, Bild, Ars Technica e.t.c).
+Users can log in with Google+, search through a list of news sources and view
+headlines for these news sources based on options(Top, Latest, Popular)
+available on the news site. It keeps you up-to-date with happenings all around
+the world, fast, and with a simple, easy-to-use user interface.
+
+### Development
+
+Loopman is built using ReactJS, React-router for routing and it
+consumes a public api from the endpoints on
+newsapi.org. The tests have been written using Mocha, Chai expect syntax and
+Enzyme.
+
 
 ### Features
 
@@ -15,31 +28,45 @@ This application lets you view headlines from 70 different sources(e.g Al Jazeer
 * Sort through news headlines.
 * Link to view full news in browser and also within the app.
 
-### Local Installation Guide
+### User Guide
+
+* Head over to http://andela-loopman.herokuapp.com to use this app
+
+### How To Contribute
 
 * Download/Clone this repository.
 * Install the dependencies using npm install.
 * Run npm start to start the application.
 * To test: run npm test.
+* Fork this repo to your own repository.
+* Create a new branch: git checkout -b new-branch-name.
+* Work on a new feature and push to your branch.
+* Create a pull request to the staging branch of this repo.
 
 ### Core Technologies
 
-* React
-* React-Router and ReactDom
-* Node.js (npm)
-* ES6
-* Webpack
-* Babel
-* Mocha
-* Chai
-* Enzyme
+* React: For the User Interface (https://facebook.github.io/react/)
+* React-Router: For routing in the app
+ (https://www.npmjs.com/package/react-router)
+* ReactDom: This package serves as the entry point of the DOM-related rendering
+ paths(https://www.npmjs.com/package/react-dom)
+* Node.js (npm): NPM was used to install all node packages
+ (https://nodejs.org/en/)
+* ES6: Used in React classes
+* Webpack: webpack bundles my modules into one static asset
+ (https://webpack.github.io/)
+* Babel: For transpiling ES6 syntax to ES5(https://babeljs.io/)
+* Mocha: For writing tests(https://mochajs.org/)
+* Chai: Expect statements in my test suites(http://chaijs.com/)
+* Enzyme: Used with Mocha and chai to test React components
+ (https://github.com/airbnb/enzyme)
+* axios: http client library for making api calls
+(https://www.npmjs.com/package/axios)
 
-### FAQs
-###### How do I use this app?
-* Go to https://andela-loopman.herokuapp.com to use this app in your browser
+### Resources
+* News api: provides endpoints for news sources and headlines (newsapi.org)
 
-###### Are there local news sources available in the app?
-* Not yet
 
-###### Can I access the news headlines without signing into the app?
-* No
+# Limitations
+* Users can only log in with Google+ currently
+* Users cannot bookmark/favourite headlines currently

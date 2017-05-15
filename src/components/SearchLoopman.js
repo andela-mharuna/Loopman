@@ -1,6 +1,7 @@
 import React from 'react';
 import * as newsActions from '../actions/newsActions';
 import newsStores from '../stores/sourcesStore';
+import Footer from './Footer';
 
 /**
  * This component displays the list of all news sources available
@@ -81,19 +82,22 @@ class SearchLoopman extends React.Component {
     const sources = this.state.sources
       .filter(source => source.name.toLowerCase().match(searchValue));
 
-    const mainArticle = sources.map((source, index) => <li
-      style={{ padding: 22 }}
-      id={index} className="list-group-item"
-      key={index}
-    >{source.name} &emsp;
-      {source.sortBysAvailable.map((option, index) =>
-        <a
-          style={{ marginRight: 10 }} className="btn btn-default pull-right"
-          key={index} href={`#/headlines?source=${source.id}&sortBy=${option}`}
-        >
-          {option}&nbsp;
-        </a>)}
-    </li>);
+    const mainArticle = sources.map((source, index) =>
+      <li
+        style={{ padding: 22, backgroundColor: '#EEF8FC' }}
+        id={index} className="list-group-item"
+        key={index}
+      >{source.name} &emsp;
+
+        {source.sortBysAvailable.map((option, index) =>
+          <a
+            style={{ marginRight: 10 }} className="btn btn-primary pull-right"
+            key={index} href={`#/headlines?source=${source.id}&sortBy=${option}`}
+          >
+            {option[0].toUpperCase() + option.substring(1)}&nbsp;
+          </a>,
+        )}
+      </li>);
 
     /**
      * This displays a spinner gif before the page renders fully.
@@ -107,13 +111,13 @@ class SearchLoopman extends React.Component {
         <div className="col-sm-8 col-sm-offset-2">
           <input
             style={{ marginTop: 15 }}
-            className="form-control" type="text" name=""
+            className="form-control input-style" type="text" name=""
             value={this.state.searchValue} onChange={this.handleChange}
             placeholder="Find source..."
           />
 
-          <h3>All Sources: </h3>
-          <ul className="list-group">
+          <h3 className="news-sources">NEWS SOURCES </h3>
+          <ul className="list-group list_group">
             {display}
           </ul>
         </div>
