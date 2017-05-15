@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const dotenv = require('dotenv').config();
-
+console.log(dotenv.config());
 const env = dotenv.parsed;
 
 console.log(env, JSON.stringify(env.API_KEY));
