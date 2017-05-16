@@ -1,7 +1,6 @@
 import React from 'react';
 import * as newsActions from '../actions/newsActions';
 import newsStores from '../stores/sourcesStore';
-import Footer from './Footer';
 
 /**
  * This component displays the list of all news sources available
