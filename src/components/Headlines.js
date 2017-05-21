@@ -1,6 +1,6 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
-import * as newsActions from '../actions/newsActions';
+import NewsActions from '../actions/newsActions';
 import newsStores from '../stores/articlesStore';
 import RenderArticles from './RenderHeadlines';
 
@@ -45,10 +45,8 @@ class Headlines extends React.Component {
   componentDidMount() {
     const articleId = this.props.location.query.source;
     const articleFilter = this.props.location.query.sortBy;
+    NewsActions.getNewsArticles(articleId, articleFilter);
     this.setState({ loading: true });
-    newsActions.getNewsArticles(articleId, articleFilter).then(() => {
-      this.setState({ loading: false });
-    });
     newsStores.addChangeListener(this.fetchNewsArticles);
   }
 
@@ -66,7 +64,7 @@ class Headlines extends React.Component {
   renderHeadlines() {
     const { loading, headlines } = this.state;
     if (loading) {
-      return (<img src="src/images/loader.gif" />);
+      return (<img src="src/images/loader.gif" alt="Loading..." />);
     }
     return (<RenderArticles headlines={headlines} />);
   }
@@ -80,8 +78,9 @@ class Headlines extends React.Component {
       <div>
         <h2 className="col-sm-8 col-sm-offset-2 headlines-header" style={{ textAlign: 'center' }}>
           <a
-            title="previous page" href="#"
+            title="previous page"
             onClick={() => hashHistory.goBack()}
+            href=""
           >
             <i className="fa fa-angle-left" />
           </a>

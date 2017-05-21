@@ -1,8 +1,6 @@
 import React from 'react';
 import Img from 'react-image';
 import { hashHistory } from 'react-router';
-import Footer from './Footer';
-
 
 /**
  * renderArticles is a pure function which maps through the response gotten
@@ -56,8 +54,11 @@ export default ({ headlines }) =>
     ))}
 
     <div className="col-sm-2 col-sm-offset-5 btn btn-default">
-      <a title="previous page" href="#"
-        onClick={() => hashHistory.goBack()}>
+      <a
+        title="previous page"
+        href=""
+        onClick={() => hashHistory.goBack()}
+      >
         Back
       </a>
     </div>
