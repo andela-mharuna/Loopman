@@ -1,5 +1,5 @@
 import React from 'react';
-import * as newsActions from '../actions/newsActions';
+import NewsActions from '../actions/newsActions';
 import newsStores from '../stores/sourcesStore';
 
 /**
@@ -29,7 +29,7 @@ class SearchLoopman extends React.Component {
    */
 
   getNewsSourcesFromActions() {
-    newsActions.getNewsSources();
+    NewsActions.getNewsSources();
   }
 
   /**
@@ -81,11 +81,11 @@ class SearchLoopman extends React.Component {
     const sources = this.state.sources
       .filter(source => source.name.toLowerCase().match(searchValue));
 
-    const mainArticle = sources.map((source, index) =>
+    const mainArticle = sources.map((source) =>
       <li
         style={{ padding: 22, backgroundColor: '#EEF8FC' }}
-        id={index} className="list-group-item"
-        key={index}
+        className="list-group-item"
+        key={source.id}
       >{source.name} &emsp;
 
         {source.sortBysAvailable.map((option, index) =>

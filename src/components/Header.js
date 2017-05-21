@@ -57,7 +57,7 @@ class Header extends React.Component {
       >
         <div className="container-fluid">
           <div className="navbar-header">
-            <Link className="navbar-brand active" to="/">Loopman</Link>
+            <Link className="navbar-brand active loopy" to="/">Loopman</Link>
           </div>
           <ul className="nav navbar-nav">
             <li>
