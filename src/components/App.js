@@ -1,6 +1,13 @@
 import React from 'react';
 import Header from './Header';
 
+/**
+ * This is a pure function that receives properties as props parameter
+ * and is the parent component in which all other child components
+ * are displayed as "props.children".
+ * @param {object} props
+ * @returns a react element.
+ */
 const App = props => (
   <div className="container-fullwidth">
     <div>
