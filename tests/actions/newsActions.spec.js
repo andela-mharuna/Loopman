@@ -25,12 +25,12 @@ describe('News Actions', () => {
     dispatcherSpy.reset();
   });
 
-  it('should exist', () => {
+  it('getNewsSources function should exist', () => {
     expect(NewsActions.getNewsSources).to.exist;
   });
 
   it('should call dispatcher with the specified actions', () => {
-    NewsActions.getNewsSources().then((response) => {
+    NewsActions.getNewsSources().then(() => {
       expect(axiosSpy.calledOnce).to.equal(true);
       expect(dispatcherSpy.calledOnce).to.equal(true);
       expect(dispatcherSpy.calledWith({
@@ -40,12 +40,12 @@ describe('News Actions', () => {
     });
   });
 
-  it('should be a function', () => {
+  it('getNewsSources function should be of type function', () => {
     expect(NewsActions.getNewsSources).to.be.a('function');
   });
 
   it('should send headlines to dispatcher', () => {
-    NewsActions.getNewsArticles().then(response => {
+    NewsActions.getNewsArticles().then(() => {
       expect(dispatcherSpy.calledOnce).to.equal(true);
       expect(axiosSpy.calledOnce).to.equal(true);
       expect(dispatcherSpy.calledWith({

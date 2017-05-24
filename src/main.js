@@ -5,10 +5,11 @@ import App from './components/App';
 import Login from './components/Login';
 import Home from './components/Home';
 import Headlines from './components/Headlines';
-import scrapedNews from './components/scrapedNews';
+import ScrapedNews from './components/ScrapedNews';
 import SearchLoopman from './components/SearchLoopman';
 import NotFoundComponent from './components/NotFoundComponent';
-require('./styles/App.scss');
+
+require('./styles/app.scss');
 
 /**
  * These are variables passed to the default requireAuth function
@@ -31,8 +32,9 @@ const Root = () => (
       <Route component={App}>
         <Route path="/" component={Home} />
         <Route path="/headlines" component={Headlines} onEnter={requireAuth} />
-        <Route path="/sources" component={SearchLoopman} onEnter={requireAuth} />
-        <Route path="/more" component={scrapedNews} onEnter={requireAuth} />
+        <Route path="/sources" component={SearchLoopman}
+          onEnter={requireAuth} />
+        <Route path="/more" component={ScrapedNews} onEnter={requireAuth} />
         <Route path="/login" component={Login} />
       </Route>
       <Route path="*" component={NotFoundComponent} />

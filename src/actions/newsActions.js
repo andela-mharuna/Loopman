@@ -7,6 +7,7 @@ class NewsActions {
  /**
  * This function fetches news sources from the news api
  * then dispatches the response received to the dispatcher
+ * @returns {object} a dispatcher object.
  */
   getNewsSources() {
     const news = NewsApi.getNewsSourcesApi();
@@ -20,8 +21,9 @@ class NewsActions {
 /**
  * This function takes 2 parameters and fetches news headlines
  * from the news api then dispatches the response received to the dispatcher
- * @param {string} source
- * @param {string} option
+ * @param {string} source, the news source
+ * @param {string} option, the sort option for that source
+ * @returns {object} a dispatcher object.
  */
   getNewsArticles(source, option) {
     const news = NewsApi.getNewsArticlesApi(source, option);

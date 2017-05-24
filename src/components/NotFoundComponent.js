@@ -2,6 +2,7 @@ import React from 'react';
 
 /**
  * This page is displayed when the user tries to access an unavailale route.
+ * @returns a react element.
  */
 const NotFoundComponent = () => (
   <div>

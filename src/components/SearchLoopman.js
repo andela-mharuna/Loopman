@@ -4,7 +4,7 @@ import newsStores from '../stores/sourcesStore';
 
 /**
  * This component displays the list of all news sources available
- * in the application and allows you searxh through that list using
+ * in the application and allows you search through that list using
  * an input tag.
  */
 
@@ -24,21 +24,20 @@ class SearchLoopman extends React.Component {
   }
 
   /**
-   * This function triggers the flux action which in turn makes a call
-   * to the newsapi.org api.
+   *  This is react lifecycle function that is called once the component mounts
    */
 
-  getNewsSourcesFromActions() {
-    NewsActions.getNewsSources();
+  componentDidMount() {
+    this.getNewsSourcesFromActions();
+    newsStores.addChangeListener(this.fetchNewsSources);
   }
 
   /**
-   *
-   * This function handles event change on entering a search value into
-   * the input field
-   */
-  handleChange(event) {
-    this.setState({ searchValue: event.target.value });
+  * This function is called once the component unmounts
+  */
+
+  componentWillUnmount() {
+    newsStores.removeChangeListener(this.fetchNewsSources);
   }
 
   /**
@@ -50,48 +49,51 @@ class SearchLoopman extends React.Component {
     this.setState({ sources: newsStores.fetchNewsSources(), loading: false });
   }
 
-  /**
-   *  This is react lifecycle function that is called once the component mounts
+ /**
+   * This function handles event change on entering a search value into
+   * the input field
+   * @param {object} event, target event object
    */
-
-  componentDidMount() {
-    this.getNewsSourcesFromActions();
-    newsStores.addChangeListener(this.fetchNewsSources);
+  handleChange(event) {
+    this.setState({ searchValue: event.target.value });
   }
 
   /**
-   * This function is called once the component unmounts
-   */
-
-  componentWillUnmount() {
-    newsStores.removeChangeListener(this.fetchNewsSources);
+  * This function triggers the flux action which in turn makes a call
+  * to the newsapi.org api.
+  */
+  getNewsSourcesFromActions() {
+    NewsActions.getNewsSources();
   }
 
 /**
  * This is a React lifecyle method that is triggered when state of the
  * component changes.
+ * @returns a react element
  */
   render() {
     /**
-     * Here, the javascript filter and match function are used to filter
-     * through the listed sources and return the matched sources
-     */
+    * Here, the javascript filter and match function are used to filter
+    * through the listed sources and return the matched sources
+    */
 
     const searchValue = this.state.searchValue.trim().toLowerCase();
     const sources = this.state.sources
       .filter(source => source.name.toLowerCase().match(searchValue));
 
-    const mainArticle = sources.map((source) =>
+    const mainArticle = sources.map(source =>
       <li
         style={{ padding: 22, backgroundColor: '#EEF8FC' }}
         className="list-group-item"
         key={source.id}
-      >{source.name} &emsp;
+      >
+        {source.name} &emsp;
 
         {source.sortBysAvailable.map((option, index) =>
           <a
             style={{ marginRight: 10 }} className="btn btn-primary pull-right"
-            key={index} href={`#/headlines?source=${source.id}&sortBy=${option}`}
+            key={index}
+            href={`#/headlines?source=${source.id}&sortBy=${option}`}
           >
             {option[0].toUpperCase() + option.substring(1)}&nbsp;
           </a>,
@@ -101,7 +103,7 @@ class SearchLoopman extends React.Component {
     /**
      * This displays a spinner gif before the page renders fully.
      */
-    const showLoading = <img src="src/images/loader.gif" />;
+    const showLoading = <img src="src/images/loader.gif" alt="Loading..." />;
 
     const display = this.state.loading ? showLoading : mainArticle;
 
@@ -117,7 +119,7 @@ class SearchLoopman extends React.Component {
 
           <h3 className="news-sources">NEWS SOURCES </h3>
           <ul className="list-group list_group">
-            {display}
+            { display }
           </ul>
         </div>
       </div>

@@ -13,8 +13,8 @@ describe('Headlines Component', () => {
   beforeEach(() => {
     wrapper = shallow(<Headlines />);
   });
-  it('should have 1 h2 tag', () => {
-    expect(wrapper.find('h2')).to.have.length(1);
+  it('should have 1 h3 tag', () => {
+    expect(wrapper.find('h3')).to.have.length(1);
   });
 
   it('renders as a <div>', () => {
@@ -30,12 +30,9 @@ describe('Headlines Component', () => {
 
   it('should have  a render method', () => {
     expect(wrapper.render).to.exist;
-
   });
 
   it('should have a render method of type function', () => {
     expect(wrapper.render).to.be.a('function');
-
   });
-
 });
