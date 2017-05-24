@@ -25,7 +25,11 @@ const requireAuth = (nextState, replace) => {
   }
 };
 
-
+/**
+ * This is a pure function which renders the routes.
+ * It is the entry point of my app.
+ * @returns route components.
+ */
 const Root = () => (
   <div>
     <Router history={hashHistory}>
