@@ -3,8 +3,8 @@ import Iframe from 'react-iframe';
 
 /**
  * This class displays news headlines within this application.
- * It uses an npm module: "react-iframe" to display articles from the news
- * sites into this application.
+ * It uses an npm module: "react-iframe" to display headlines from the news
+ * sites in this application.
  */
 
 class ScrapedNews extends React.Component {
