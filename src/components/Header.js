@@ -24,8 +24,14 @@ class Header extends React.Component {
 /**
  * This lifecycle function displays the component on the page.
  * The component renders the links in the navigation bar.
+ * @returns a react element, button
  */
   render() {
+    /**
+     *
+     * @param {object} props
+     * @returns a react element, button
+     */
     function LogOutButton(props) {
       return (
         <button
@@ -44,7 +50,7 @@ class Header extends React.Component {
     const IsLoggedIn = localStorage.getItem('id_token');
     if (IsLoggedIn) {
       button = <LogOutButton onClick={this.handleLogoutClick} />;
-      sourcesLink = <Link to="sources">News Sources </Link>;
+      sourcesLink = <Link className="loopy" to="sources">News Sources </Link>;
     } else {
       button = <Login />;
     }

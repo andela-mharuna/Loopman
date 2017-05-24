@@ -1,10 +1,16 @@
 .header-nav {
   margin-bottom: 0px !important;
   background-color: #1B789D;
-  color: red !important;
+  color: #fff !important;
 }
+.loopy{
+  color: #fff !important;
+}
+
 .jumbo{
   background-color: #B9E3F3;
+  margin-bottom: 0 !important;
+  border-color: #333;
 }
 .heart{
   color: red;
@@ -46,4 +52,16 @@
 .headlines-list{
   height: 550px;
   overflow: auto;
+}
+
+.explore{
+  padding: 8px;
+  color: white;
+  background-color:#322d2b;
+  vertical-align: center;
+  margin-bottom: 0 !important;
+}
+
+.home-image{
+  margin-top: 0  !important;
 }

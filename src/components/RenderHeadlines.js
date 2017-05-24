@@ -9,7 +9,7 @@ import { hashHistory } from 'react-router';
  *  that is passed to the renderArticles function from the Headlines component.
  */
 
-export default ({ headlines }) =>
+const RenderArticles = ({ headlines }) =>
   (<div
     style={{ backgroundColor: '#EEF8FC', paddingTop: 15 }}
     className="col-sm-8 col-sm-offset-2 headlines-list"
@@ -63,4 +63,6 @@ export default ({ headlines }) =>
       </a>
     </div>
   </div>
-);
+  );
+
+export default RenderArticles;

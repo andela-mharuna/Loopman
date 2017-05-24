@@ -9,11 +9,13 @@ import { hashHistory } from 'react-router';
  * @param {Array} response
  */
 const storeUserData = (response) => {
+  console.log(response);
   localStorage.setItem('id_token', response.googleId);
+  localStorage.setItem('googleGivenName', response.profileObj.givenName);
   hashHistory.push('/sources');
 };
 
-const responseGoogle = (response) => {
+const responseGoogle = () => {
   alert('Oops! Something went wrong. Please try again');
 };
 
@@ -26,7 +28,7 @@ const Login = () => (
   <div>
     <GoogleLogin
       clientId={process.env.CLIENT_ID}
-      className="btn btn-primary"
+      className="btn btn-danger"
       onSuccess={storeUserData}
       onFailure={responseGoogle}
     >
