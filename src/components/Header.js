@@ -37,7 +37,8 @@ class Header extends React.Component {
         <button
           className="btn btn-default btn-danger"
           onClick={props.onClick}
-        >Log out
+        >
+          Log out
         </button>
       );
     }
