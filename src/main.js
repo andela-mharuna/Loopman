@@ -5,11 +5,11 @@ import App from './components/App';
 import Login from './components/Login';
 import Home from './components/Home';
 import Headlines from './components/Headlines';
-import ScrapedNews from './components/ScrapedNews';
+import ScrapedNews from './components/scrapedNews';
 import SearchLoopman from './components/SearchLoopman';
 import NotFoundComponent from './components/NotFoundComponent';
 
-require('./styles/app.scss');
+require('./styles/App.scss');
 
 /**
  * These are variables passed to the default requireAuth function
