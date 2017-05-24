@@ -46,10 +46,13 @@ class NewsStores extends EventEmitter {
    */
   handleNewsAction(result) {
     switch (result.actionType) {
-      case newsConstants.GET_NEWS_SOURCES:
-        this.sources = result.sources;
-        this.emit('change');
-        break;
+    case newsConstants.GET_NEWS_SOURCES:
+      this.sources = result.sources;
+      this.emit('change');
+      break;
+
+    default:
+      break;
     }
   }
 

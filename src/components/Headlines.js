@@ -6,7 +6,7 @@ import RenderArticles from './RenderHeadlines';
 
  /**
  * This is the component that displays headlines gotten from various
- * news sources
+ * news sources.
  */
 
 class Headlines extends React.Component {
@@ -25,22 +25,8 @@ class Headlines extends React.Component {
     this.fetchNewsArticles = this.fetchNewsArticles.bind(this);
   }
 
-  /**
-  * This fetches headlines from the store and sets them as state for this
-  * component
-  */
-  fetchNewsArticles() {
-    const articles = newsStores.fetchNewsArticles;
-    const sourceName = newsStores.fetchSource;
-    this.setState({
-      headlines: articles,
-      sourceName,
-      loading: false,
-    });
-  }
-
  /**
- * This function is called when component mounts
+ * This function is called when component mounts.
  */
   componentDidMount() {
     const articleId = this.props.location.query.source;
@@ -51,7 +37,7 @@ class Headlines extends React.Component {
   }
 
   /**
-  * This function is called once component unmounts
+  * This function is called once component unmounts.
   */
 
   componentWillUnmount() {
@@ -59,7 +45,21 @@ class Headlines extends React.Component {
   }
 
   /**
+  * This fetches headlines from the store and sets them as state for this
+  * component.
+  */
+  fetchNewsArticles() {
+    const articles = newsStores.fetchNewsArticles;
+    const sourceName = newsStores.fetchSource;
+    this.setState({
+      headlines: articles,
+      sourceName,
+      loading: false,
+    });
+  }
+  /**
   * This shows the loading spinner before content on page is rendered.
+  * @returns a react element.
   */
   renderHeadlines() {
     const { loading, headlines } = this.state;
@@ -70,13 +70,17 @@ class Headlines extends React.Component {
   }
 
 /**
- * This renders headlines on the page
+ * This renders headlines on the page.
+ * @returns a react element.
  */
   render() {
     const newSourceName = this.state.sourceName;
     return (
       <div>
-        <h2 className="col-sm-8 col-sm-offset-2 headlines-header" style={{ textAlign: 'center' }}>
+        <h3
+          className="col-sm-8 col-sm-offset-2 headlines-header"
+          style={{ textAlign: 'center' }}
+        >
           <a
             title="previous page"
             onClick={() => hashHistory.goBack()}
@@ -85,10 +89,10 @@ class Headlines extends React.Component {
             <i className="fa fa-angle-left" />
           </a>
           &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-          News From &nbsp;
+          NEWS FROM &nbsp;
           {newSourceName &&
             newSourceName.split('-').join(' ').toUpperCase()}
-        </h2>
+        </h3>
         {this.renderHeadlines()}
       </div>
     );
