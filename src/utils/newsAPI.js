@@ -8,7 +8,8 @@ class NewsApi {
    * @param {string} option, the sort options.
    * @returns a promise from newsapi articles endpoint
    */
-  getNewsArticlesApi(source, option) {
+
+  static getNewsArticlesApi(source, option) {
     const BASE_URL = 'https://newsapi.org/v1/';
     return axios.get(`${BASE_URL}articles?source=${source}&sortBy=${option}&apiKey=${process.env.API_KEY}`);
   }
@@ -18,10 +19,10 @@ class NewsApi {
   * using axios http client library.
   * @returns a promise from newsapi sources endpoint
   */
-  getNewsSourcesApi() {
+  static getNewsSourcesApi() {
     return axios.get('https://newsapi.org/v1/sources');
   }
 }
 
-export default new NewsApi();
+export default NewsApi;
 

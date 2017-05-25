@@ -7,7 +7,7 @@ import newsConstants from '../constants/newsConstants';
  * and receives a payload from it which it makes available to the view
  * component, SearchLoopman.js
  */
-class NewsStores extends EventEmitter {
+class SourcesStore extends EventEmitter {
   constructor() {
     super();
     this.sources = [];
@@ -39,25 +39,21 @@ class NewsStores extends EventEmitter {
   removeChangeListener(callback) {
     this.removeListener('change', callback);
   }
+
   /**
    * This function uses a switch statement to specify which payload to receive
    * from the dispatcher.
    * @param {object} result
    */
   handleNewsAction(result) {
-    switch (result.actionType) {
-    case newsConstants.GET_NEWS_SOURCES:
+    if (result.actionType === newsConstants.GET_NEWS_SOURCES) {
       this.sources = result.sources;
       this.emit('change');
-      break;
-
-    default:
-      break;
     }
   }
 
 }
 
-const newsStores = new NewsStores();
-Dispatcher.register(newsStores.handleNewsAction.bind(newsStores));
-export default newsStores;
+const sourcesStore = new SourcesStore();
+Dispatcher.register(sourcesStore.handleNewsAction.bind(sourcesStore));
+export default sourcesStore;

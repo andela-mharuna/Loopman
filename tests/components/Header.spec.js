@@ -1,7 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow, render } from 'enzyme';
-import Header from '../../src/components/Header';
+import Header from '../../src/components/Header.jsx';
 
 describe('Header Component', () => {
   it('should have 1 nav tag', () => {

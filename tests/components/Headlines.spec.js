@@ -1,7 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import Headlines from '../../src/components/Headlines';
+import Headlines from '../../src/components/Headlines.jsx';
 
 describe('Headlines Component', () => {
   let wrapper;
@@ -17,7 +17,7 @@ describe('Headlines Component', () => {
     expect(wrapper.find('h3')).to.have.length(1);
   });
 
-  it('renders as a <div>', () => {
+  it('should render a html container', () => {
     expect(wrapper.type()).to.eql('div');
   });
 
@@ -28,11 +28,7 @@ describe('Headlines Component', () => {
       .equal(initialState);
   });
 
-  it('should have  a render method', () => {
+  it('should have a render method', () => {
     expect(wrapper.render).to.exist;
-  });
-
-  it('should have a render method of type function', () => {
-    expect(wrapper.render).to.be.a('function');
   });
 });
