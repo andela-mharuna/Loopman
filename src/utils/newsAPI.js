@@ -1,12 +1,28 @@
 import axios from 'axios';
 
-export function getNewsArticlesApi(source, option, callback) {
-  const url = `https://newsapi.org/v1/articles?source=${source}&sortBy=${option}&apiKey=213327409d384371851777e7c7f78dfe`;
-  axios.get(url).then(response => callback(response.data));
+class NewsApi {
+  /**
+   * This function takes two parameters and makes a call to news api articles
+   * endpoint using axios http client library.
+   * @param {string} source, the news source
+   * @param {string} option, the sort options.
+   * @returns a promise from newsapi articles endpoint
+   */
+
+  static getNewsArticlesApi(source, option) {
+    const BASE_URL = 'https://newsapi.org/v1/';
+    return axios.get(`${BASE_URL}articles?source=${source}&sortBy=${option}&apiKey=${process.env.API_KEY}`);
+  }
+
+ /**
+  * This function makes a call to news api sources endpoint
+  * using axios http client library.
+  * @returns a promise from newsapi sources endpoint
+  */
+  static getNewsSourcesApi() {
+    return axios.get('https://newsapi.org/v1/sources');
+  }
 }
 
-export function getNewsSourcesApi(callback) {
-  // window.mo = function getNewsSources(callback){
-  const url = 'https://newsapi.org/v1/sources';
-  axios.get(url).then(response => callback(response.data.sources));
-}
+export default NewsApi;
+
