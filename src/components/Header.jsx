@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
-import Login from './Login';
+import Login from './Login.jsx';
 
 /**
  * This component is the navigation bar at the top of the page.
