@@ -1,6 +1,6 @@
 import React from 'react';
 import { expect } from 'chai';
-import newsStores from '../../src/stores/sourcesStore';
+import sourcesStore from '../../src/stores/sourcesStore';
 import Dispatcher from '../../src/dispatcher/dispatcher';
 import newsConstants from '../../src/constants/newsConstants';
 import mockNews from '../testUtils/mockNews';
@@ -8,30 +8,30 @@ import mockNews from '../testUtils/mockNews';
 
 describe('Sources Store', () => {
   it('should exist', () => {
-    expect(newsStores).to.exist;
+    expect(sourcesStore).to.exist;
   });
 
   it('should be an object', () => {
-    expect(newsStores).to.be.an('object');
+    expect(sourcesStore).to.be.an('object');
   });
 
-  it('should have a addChangeListener function', () => {
-    expect(newsStores.addChangeListener).to.be.a('function');
+  it('should have a \'addChangeListener\' function', () => {
+    expect(sourcesStore.addChangeListener).to.be.a('function');
   });
 
-  it('should receive sources from dispatcher', () => {
+  it('should receive news sources from Dispatcher', () => {
     Dispatcher.dispatch({
       actionType: newsConstants.GET_NEWS_SOURCES,
       sources: mockNews,
     });
-    expect(newsStores.fetchNewsSources()).to.eql(mockNews);
+    expect(sourcesStore.fetchNewsSources()).to.eql(mockNews);
   });
 
-  it('should emit change on receiving headlines from dispatcher', () => {
+  it('should emit change on receiving news sources from Dispatcher', () => {
     Dispatcher.dispatch({
       actionType: newsConstants.GET_NEWS_SOURCES,
       sources: mockNews,
     });
-    expect(newsStores.emit('change')).to.exist;
+    expect(sourcesStore.emit('change')).to.exist;
   });
 });

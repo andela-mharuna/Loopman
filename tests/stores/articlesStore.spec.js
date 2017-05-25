@@ -1,37 +1,36 @@
 import React from 'react';
 import { expect } from 'chai';
-import newsStores from '../../src/stores/articlesStore';
+import articlesStore from '../../src/stores/articlesStore';
 import Dispatcher from '../../src/dispatcher/dispatcher';
 import newsConstants from '../../src/constants/newsConstants';
 import mockNews from '../testUtils/mockNews';
 
 describe('Articles Store', () => {
-
   it('should exist', () => {
-    expect(newsStores).to.exist;
+    expect(articlesStore).to.exist;
   });
 
   it('should be an object', () => {
-    expect(newsStores).to.be.an('object');
+    expect(articlesStore).to.be.an('object');
   });
 
-  it('should have a addChangeListener function', () => {
-    expect(newsStores.addChangeListener).to.be.a('function');
+  it('should have a \'addChangeListener\' function', () => {
+    expect(articlesStore.addChangeListener).to.be.a('function');
   });
 
-  it('should receive headlines from dispatcher', () => {
+  it('should receive news headlines from Dispatcher', () => {
     Dispatcher.dispatch({
       actionType: newsConstants.GET_NEWS_ARTICLES,
       headlines: mockNews,
     });
-    expect(newsStores.fetchNewsArticles).to.eql(mockNews);
+    expect(articlesStore.fetchNewsArticles).to.eql(mockNews);
   });
 
-  it('should emit change on receiving headlines from dispatcher', () => {
+  it('should emit change on receiving news headlines from Dispatcher', () => {
     Dispatcher.dispatch({
       actionType: newsConstants.GET_NEWS_ARTICLES,
       headlines: mockNews,
     });
-    expect(newsStores.emit('change')).to.exist;
+    expect(articlesStore.emit('change')).to.exist;
   });
 });
