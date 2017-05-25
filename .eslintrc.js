@@ -34,6 +34,7 @@ module.exports = {
   "root": true,
   "parser": "babel-eslint",
   "rules": {
+    "strict": 0,
     "max-len": [1, 80, 2],
     "indent": [1, 2],
     "one-var": 0,
@@ -47,7 +48,7 @@ module.exports = {
     "no-shadow": [1, { "allow": ["req", "res", "err"] }],
     "no-undef": 0,
     "jsx-quotes": 1,
-    "class-methods-use-this": 0,
+    "class-methods-use-this": 1,
     "react/display-name": [ 1, {"ignoreTranspilerName": false }],
     "react/forbid-prop-types": [1, {"forbid": ["any"]}],
     "react/jsx-boolean-value": 1,

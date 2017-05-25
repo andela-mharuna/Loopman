@@ -9,7 +9,7 @@ class NewsActions {
  * then dispatches the response received to the dispatcher
  * @returns {object} a dispatcher object.
  */
-  getNewsSources() {
+  static getNewsSources() {
     const news = NewsApi.getNewsSourcesApi();
     return news.then((response) => {
       Dispatcher.dispatch({
@@ -25,7 +25,7 @@ class NewsActions {
  * @param {string} option, the sort option for that source
  * @returns {object} a dispatcher object.
  */
-  getNewsArticles(source, option) {
+  static getNewsArticles(source, option) {
     const news = NewsApi.getNewsArticlesApi(source, option);
     return news.then((response) => {
       Dispatcher.dispatch({
@@ -36,4 +36,4 @@ class NewsActions {
     }).catch(error => error);
   }
 }
-export default new NewsActions();
+export default NewsActions;

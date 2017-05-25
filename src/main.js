@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, hashHistory } from 'react-router';
-import App from './components/App';
-import Login from './components/Login';
-import Home from './components/Home';
-import Headlines from './components/Headlines';
-import ScrapedNews from './components/ScrapedNews';
-import SearchLoopman from './components/SearchLoopman';
-import NotFoundComponent from './components/NotFoundComponent';
+import App from './components/App.jsx';
+import Login from './components/Login.jsx';
+import Home from './components/Home.jsx';
+import Headlines from './components/Headlines.jsx';
+import ScrapedNews from './components/ScrapedNews.jsx';
+import SearchLoopman from './components/SearchLoopman.jsx';
+import PageNotFound from './components/PageNotFound.jsx';
 
 require('./styles/app.scss');
 
@@ -41,7 +41,7 @@ const Root = () => (
         <Route path="/more" component={ScrapedNews} onEnter={requireAuth} />
         <Route path="/login" component={Login} />
       </Route>
-      <Route path="*" component={NotFoundComponent} />
+      <Route path="*" component={PageNotFound} />
     </Router>
   </div>
 );

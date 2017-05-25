@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import GoogleLogin from 'react-google-login';
 
-import Login from '../../src/components/Login';
+import Login from '../../src/components/Login.jsx';
 
 describe('Login Component', () => {
   let wrapper;
@@ -15,7 +15,7 @@ describe('Login Component', () => {
     expect(wrapper.find(GoogleLogin)).to.have.length(1);
   });
 
-  it('should render as a <div>', () => {
+  it('should render a html container', () => {
     expect(wrapper.type()).to.eql('div');
   });
 });

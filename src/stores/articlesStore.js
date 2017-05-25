@@ -7,7 +7,7 @@ import newsConstants from '../constants/newsConstants';
  * and receives a payload from it which it makes available to the view
  * component, Headlines.js
  */
-class NewsStores extends EventEmitter {
+class ArticlesStore extends EventEmitter {
   constructor() {
     super();
 
@@ -29,6 +29,7 @@ class NewsStores extends EventEmitter {
   get fetchSource() {
     return this.sourceName;
   }
+
   /**
    * This function instantiates a change listener which the view invokes when
    * there is a change in state. It requires a:
@@ -53,20 +54,15 @@ class NewsStores extends EventEmitter {
    * @param {object} result
    */
   handleNewsAction(result) {
-    switch (result.actionType) {
-    case newsConstants.GET_NEWS_ARTICLES:
+    if (result.actionType === newsConstants.GET_NEWS_ARTICLES) {
       this.articles = result.headlines;
       this.sourceName = result.sourceName;
       this.emit('change');
-      break;
-
-    default:
-      break;
     }
   }
 
 }
 
-const newsStores = new NewsStores();
-Dispatcher.register(newsStores.handleNewsAction.bind(newsStores));
-export default newsStores;
+const articlesStore = new ArticlesStore();
+Dispatcher.register(articlesStore.handleNewsAction.bind(articlesStore));
+export default articlesStore;

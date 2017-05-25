@@ -2,8 +2,8 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
-import App from '../../src/components/App';
-import Header from '../../src/components/Header';
+import App from '../../src/components/App.jsx';
+import Header from '../../src/components/Header.jsx';
 
 describe('App Component', () => {
   it('should render 1 Header component', () => {
@@ -20,7 +20,7 @@ describe('App Component', () => {
     expect(wrapper.contains(<div className="main-container" />)).to.equal(true);
   });
 
-  it('should render as a <div>', () => {
+  it('should render a html container', () => {
     const wrapper = shallow(<App />);
     expect(wrapper.type()).to.eql('div');
   });
