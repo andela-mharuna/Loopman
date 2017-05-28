@@ -25,10 +25,10 @@ describe('News Actions', () => {
     dispatcherSpy.reset();
   });
 
-  describe('should have a \'getNewsSources\' function', () => {
+  describe('#getNewsSources', () => {
     expect(NewsActions.getNewsSources).to.be.a('function');
 
-    it('which should dispatch news sources', () => {
+    it('should dispatch news sources', () => {
       NewsActions.getNewsSources().then(() => {
         expect(axiosSpy.calledOnce).to.equal(true);
         expect(dispatcherSpy.calledOnce).to.equal(true);
@@ -40,10 +40,10 @@ describe('News Actions', () => {
     });
   });
 
-  describe('should have a \'getNewsArticles\' function', () => {
+  describe('#getNewsArticles', () => {
     expect(NewsActions.getNewsArticles).to.be.a('function');
 
-    it('which should dispatch news articles', () => {
+    it('should dispatch news articles', () => {
       NewsActions.getNewsArticles().then(() => {
         expect(dispatcherSpy.calledOnce).to.equal(true);
         expect(axiosSpy.calledOnce).to.equal(true);
