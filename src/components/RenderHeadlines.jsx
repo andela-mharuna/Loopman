@@ -3,12 +3,13 @@ import Img from 'react-image';
 import { hashHistory } from 'react-router';
 
 /**
- * renderArticles is a pure function which maps through the response gotten
- * from newsapi.org articles endpoint.
- * @param {Array} headlines is the array of data from the api
- *  that is passed to the renderArticles function from the Headlines component.
- */
-
+* renderArticles is a pure function which maps through the response gotten
+* from newsapi.org articles endpoint.
+* @param {Array} headlines is the array of data from the api
+* that is passed to the renderArticles function from the Headlines component.
+* @returns a react element, showing the list of headlines gotten
+* from newsapi.org
+*/
 const RenderHeadlines = ({ headlines }) =>
   (<div
     style={{ backgroundColor: '#EEF8FC', paddingTop: 15 }}

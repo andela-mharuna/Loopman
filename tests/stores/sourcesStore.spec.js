@@ -1,7 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import sourcesStore from '../../src/stores/sourcesStore';
-import Dispatcher from '../../src/dispatcher/dispatcher';
+import Dispatcher from '../../src/dispatcher/Dispatcher';
 import newsConstants from '../../src/constants/newsConstants';
 import mockNews from '../testUtils/mockNews';
 

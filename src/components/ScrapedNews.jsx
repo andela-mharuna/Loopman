@@ -2,11 +2,12 @@ import React from 'react';
 import Iframe from 'react-iframe';
 
 /**
- * This class displays news headlines within this application.
- * It uses an npm module: "react-iframe" to display headlines from the news
- * sites in this application.
- */
-
+* THis class displays news headlines within this application.
+* It uses an npm module: "react-iframe" to display headlines from the news
+* sites in this application.
+* @class ScrapedNews
+* @extends {React.Component}
+*/
 class ScrapedNews extends React.Component {
   render() {
     const scrapedNewsUrl = this.props.location.search.slice(8);

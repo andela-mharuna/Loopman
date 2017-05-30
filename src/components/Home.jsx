@@ -1,9 +1,12 @@
 import React from 'react';
 import Footer from './Footer.jsx';
+
 /**
- * This is the welcome page and the landing page where
- * users log into the application.
- */
+* This is the welcome page and the landing page where
+* users log into the application.
+* @class Home
+* @extends {React.Component}
+*/
 class Home extends React.Component {
   constructor() {
     super();
@@ -13,6 +16,11 @@ class Home extends React.Component {
     };
   }
 
+  /**
+  * This lifecycle method is called when the component state updates.
+  * @returns a react element
+  * @memberOf Home
+  */
   render() {
     const isLoggedIn = localStorage.getItem('id_token');
     let signInPrompt = null;

@@ -12,12 +12,12 @@ import PageNotFound from './components/PageNotFound.jsx';
 require('./styles/app.scss');
 
 /**
- * These are variables passed to the default requireAuth function
- * @param {String} nextState
- * @param {String} replace
- * The requireAuth function validates that the user is signed in and
- * then redirects to the home page if the user is not signed in.
- */
+* These are variables passed to the default requireAuth function
+* @param {String} nextState
+* @param {String} replace
+* The requireAuth function validates that the user is signed in and
+* then redirects to the home page if the user is not signed in.
+*/
 const requireAuth = (nextState, replace) => {
   const token = localStorage.getItem('id_token');
   if (!token) {
@@ -26,10 +26,10 @@ const requireAuth = (nextState, replace) => {
 };
 
 /**
- * This is a pure function which renders the routes.
- * It is the entry point of my app.
- * @returns route components.
- */
+* This is a pure function which renders the routes.
+* It is the entry point of my app.
+* @returns route components.
+*/
 const Root = () => (
   <div>
     <Router history={hashHistory}>

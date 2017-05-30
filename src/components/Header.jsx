@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
-import Login from './Login';
+import Login from './Login.jsx';
 
 /**
- * This component is the navigation bar at the top of the page.
- */
+* This component displays the navigation bar at the top of the page.
+* @class Header
+* @extends {React.Component}
+*/
 class Header extends React.Component {
   constructor() {
     super();
@@ -13,25 +15,27 @@ class Header extends React.Component {
   }
 
   /**
-   * This function is called when a user clicks on the logout button.
-   */
-
+  * This method is called when a user clicks on the logout button.
+  * @method handleLogoutClick
+  * @memberOf Header
+  */
   handleLogoutClick() {
     localStorage.removeItem('id_token');
     hashHistory.push('/');
   }
 
-/**
- * This lifecycle function displays the component on the page.
- * The component renders the links in the navigation bar.
- * @returns a react element, button
- */
+  /**
+  * This lifecycle method displays the component on the page.
+  * The component renders the links in the navigation bar.
+  * @method render
+  * @returns a react element, button
+  * @memberOf Header
+  */
   render() {
     /**
-     *
-     * @param {object} props
-     * @returns a react element, button
-     */
+    * @param {object} props
+    * @returns a react element, button
+    */
     function LogOutButton(props) {
       return (
         <button
@@ -42,9 +46,8 @@ class Header extends React.Component {
       );
     }
 
-  /** Switches dynamically between login or logout button depending on if
-  * the user is logged in or not.
-  */
+    // Switches dynamically between login or logout button depending on if
+    // the user is logged in or not.
     let button = null;
     let sourcesLink = null;
     const IsLoggedIn = localStorage.getItem('id_token');
@@ -54,7 +57,6 @@ class Header extends React.Component {
     } else {
       button = <Login />;
     }
-
 
     return (
       <nav
