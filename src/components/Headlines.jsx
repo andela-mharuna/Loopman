@@ -39,7 +39,7 @@ class Headlines extends React.Component {
 
   /**
   * This lifecycle method is called once component unmounts.
-  * @method componentDidMount
+  * @method componentWillUnmount
   * @memberOf Headlines
   */
   componentWillUnmount() {
