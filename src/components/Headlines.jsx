@@ -79,7 +79,7 @@ class Headlines extends React.Component {
   /**
   * This lifecyle method renders headlines on the page.
   * @method render
-  * @memberOf Header
+  * @memberOf Headlines
   * @returns a react element.
   */
   render() {
