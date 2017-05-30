@@ -2,8 +2,8 @@ import React from 'react';
 import { expect } from 'chai';
 import axios from 'axios';
 import sinon from 'sinon';
-import NewsActions from '../../src/actions/newsActions';
-import Dispatcher from '../../src/dispatcher/dispatcher';
+import NewsActions from '../../src/actions/NewsActions';
+import Dispatcher from '../../src/dispatcher/Dispatcher';
 import newsConstants from '../../src/constants/newsConstants';
 import mockNews from '../testUtils/mockNews';
 

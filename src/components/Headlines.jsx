@@ -1,14 +1,15 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
-import NewsActions from '../actions/newsActions';
+import NewsActions from '../actions/NewsActions';
 import articlesStore from '../stores/articlesStore';
 import RenderHeadlines from './RenderHeadlines.jsx';
 
- /**
- * This is the component that displays headlines gotten from various
- * news sources.
- */
-
+/**
+* This is the component that displays headlines gotten from various
+* news sources.
+* @class Headlines
+* @extends {React.Component}
+*/
 class Headlines extends React.Component {
   constructor() {
     super();
@@ -19,15 +20,15 @@ class Headlines extends React.Component {
       sourceName: '',
     };
 
- /**
- * This binds the function to the "this" in the constructor.
- */
+    // This binds the function to the "this" in the constructor.
     this.fetchNewsArticles = this.fetchNewsArticles.bind(this);
   }
 
- /**
- * This function is called when component mounts.
- */
+  /**
+  * This React lifecycle method is called when component mounts.
+  * @method componentDidMount
+  * @memberOf Headlines
+  */
   componentDidMount() {
     const articleId = this.props.location.query.source;
     const articleFilter = this.props.location.query.sortBy;
@@ -37,9 +38,10 @@ class Headlines extends React.Component {
   }
 
   /**
-  * This function is called once component unmounts.
+  * This lifecycle method is called once component unmounts.
+  * @method componentDidMount
+  * @memberOf Headlines
   */
-
   componentWillUnmount() {
     articlesStore.removeChangeListener(this.fetchNewsArticles);
   }
@@ -47,6 +49,8 @@ class Headlines extends React.Component {
   /**
   * This fetches headlines from the store and sets them as state for this
   * component.
+  * @method fetchNewsArticles
+  * @memberOf Headlines
   */
   fetchNewsArticles() {
     const articles = articlesStore.fetchNewsArticles;
@@ -57,9 +61,12 @@ class Headlines extends React.Component {
       loading: false,
     });
   }
+
   /**
   * This shows the loading spinner before content on page is rendered.
   * @returns a react element.
+  * @method renderHeadlines
+  * @memberOf Headlines
   */
   renderHeadlines() {
     const { loading, headlines } = this.state;
@@ -69,10 +76,12 @@ class Headlines extends React.Component {
     return (<RenderHeadlines headlines={headlines} />);
   }
 
-/**
- * This renders headlines on the page.
- * @returns a react element.
- */
+  /**
+  * This lifecyle method renders headlines on the page.
+  * @method render
+  * @memberOf Header
+  * @returns a react element.
+  */
   render() {
     const newSourceName = this.state.sourceName;
     return (
