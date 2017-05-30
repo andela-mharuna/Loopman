@@ -1,9 +1,9 @@
 import React from 'react';
 
 /**
- * This page is displayed when the user tries to access an unavailale route.
- * @returns a react element.
- */
+* This page is displayed when the user tries to access an unavailale route.
+* @returns a react element.
+*/
 const PageNotFound = () => (
   <div>
     <h3 style={{ textAlign: 'center' }}>
